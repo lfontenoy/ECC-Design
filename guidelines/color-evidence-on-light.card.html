@@ -1,0 +1,30 @@
+<!-- @dsCard group="Colors" viewport="700x260" name="Amarillo sobre fondo claro" subtitle="#FFC300 va como relleno con tinta navy. Como texto sobre blanco no se lee" -->
+<!doctype html><html lang="es"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>body{margin:0;padding:20px 24px;background:var(--surface-page);font:var(--type-body)}
+.col{flex:1;min-width:0;display:flex;flex-direction:column;gap:12px}
+.hd{display:flex;align-items:center;gap:8px;font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase}
+.dot{width:7px;height:7px;border-radius:50%}
+.big{font-family:var(--font-display);font-variation-settings:var(--vf-display);font-weight:700;font-size:34px;letter-spacing:var(--tracking-display);line-height:1.1}
+.ratio{font-family:var(--font-mono);font-size:11px;color:var(--text-muted)}</style></head>
+<body><div style="display:flex;gap:22px;align-items:stretch">
+<div class="col">
+<span class="hd" style="color:var(--navy-900)"><span class="dot" style="background:var(--gold-400)"></span>Así sí</span>
+<span class="big"><span class="ecc-mark">1.6 g/kg</span></span>
+<span class="big" style="color:var(--navy-950)"><span class="ecc-underline">60% más músculo</span></span>
+<span class="ratio">relleno #FFC300 + tinta navy-975 · 12.2:1</span>
+</div>
+<div style="width:1px;background:var(--border-subtle)"></div>
+<div class="col">
+<span class="hd" style="color:var(--coral-500)"><span class="dot" style="background:var(--coral-400)"></span>Así no</span>
+<span class="big" style="color:var(--gold-400)">1.6 g/kg</span>
+<span class="big" style="color:var(--accent-evidence-deep)">60% más músculo</span>
+<span class="ratio">amarillo como texto: 1.5:1 · accent-evidence-deep: 3.1:1, tampoco pasa</span>
+</div>
+<div style="width:1px;background:var(--border-subtle)"></div>
+<div class="col" style="max-width:190px">
+<span class="hd" style="color:var(--text-muted)">Reglas</span>
+<span style="font-size:13px;line-height:1.55;color:var(--text-muted)">Sobre navy el amarillo sí es texto: <span style="background:var(--navy-900);color:var(--gold-400);padding:1px 6px;border-radius:3px">9.7:1</span></span>
+<span style="font-size:13px;line-height:1.55;color:var(--text-muted)">Sobre claro: <code style="font-family:var(--font-mono);font-size:12px">.ecc-mark</code> o <code style="font-family:var(--font-mono);font-size:12px">.ecc-underline</code>.</span>
+<span style="font-size:13px;line-height:1.55;color:var(--text-muted)">accent-evidence-deep (gold-600) solo en filetes y bordes de 2-3px, nunca en texto.</span>
+</div></div>
+</body></html>

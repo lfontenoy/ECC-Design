@@ -1,0 +1,9 @@
+:root{
+--space-05:2px;--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;--space-24:96px;--space-32:128px;
+/* Ritmo de bloques */
+--gap-inline:var(--space-2);--gap-stack:var(--space-4);--gap-group:var(--space-8);--gap-section:var(--space-20);
+--pad-card:var(--space-6);--pad-card-lg:var(--space-8);--pad-control-x:var(--space-5);--pad-control-y:var(--space-3);
+/* Lienzos y contenedores */
+--container-max:1160px;--measure-prose:64ch;--measure-narrow:44ch;
+--canvas-reel-w:1080px;--canvas-reel-h:1920px;--canvas-post-w:1080px;--canvas-post-h:1350px;
+}

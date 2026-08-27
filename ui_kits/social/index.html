@@ -1,0 +1,86 @@
+<!-- @dsCard group="Contenido social" viewport="1280x720" name="Plantillas de contenido" subtitle="Covers de Reel, gráficos en pantalla y carrusel de 5 láminas" -->
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>ECC · Plantillas de contenido</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../_ds_fallback.js"></script>
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<style>body{margin:0;background:var(--surface-page)}
+.wrap{padding:28px 32px;display:flex;flex-direction:column;gap:24px}
+.bar{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.stage{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
+.frame{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--navy-950)}
+.cap{margin-top:10px;font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-faint)}
+</style></head><body><div id="root"></div>
+<script type="text/babel">
+let Tabs,Tag,IconButton,Logo,Badge,ReelCover,ReelOverlay,CarouselDeck;
+function Frame({w,h,scale,children}){
+  return (<div><div className="frame" style={{width:w*scale,height:h*scale}}>
+    <div style={{width:w,height:h,transform:'scale('+scale+')',transformOrigin:'top left'}}>{children}</div>
+  </div></div>);
+}
+function App(){
+  const [tab,setTab]=React.useState('covers');
+  const [slide,setSlide]=React.useState(0);
+  const [overlay,setOverlay]=React.useState('hook');
+  return (
+    <div className="wrap">
+      <div className="bar">
+        {Logo?<Logo variant="horizontal" theme="light" size={36} src="../../assets/isotipo-ecc-navy.png"/>:null}
+        <span style={{width:1,height:28,background:'var(--border-subtle)'}}/>
+        {Tabs?<Tabs value={tab} onChange={setTab} items={[{value:'covers',label:'Covers de Reel'},{value:'overlay',label:'Gráficos en pantalla'},{value:'carrusel',label:'Carrusel'}]}/>:null}
+      </div>
+
+      {tab==='covers'?(<div className="stage">
+        {[['question','Pregunta / painpoint'],['stat','Cifra'],['versus','A vs B']].map(([v,label])=>(
+          <div key={v}><Frame w={1080} h={1920} scale={0.29}><ReelCover variant={v}/></Frame><div className="cap">{label}</div></div>
+        ))}
+        <div style={{maxWidth:230,fontSize:13,lineHeight:1.6,color:'var(--text-muted)'}}>
+          El cover lleva de 2 a 5 palabras y nombra el dolor del viewer (peso, energia, verse mejor), no el tecnicismo.
+          Una sola palabra en amarillo.
+        </div>
+      </div>):null}
+
+      {tab==='overlay'?(<div className="stage">
+        <div>
+          <Frame w={1080} h={1920} scale={0.32}><ReelOverlay kind={overlay}/></Frame>
+          <div className="cap">Fotograma con grafico</div>
+        </div>
+        <div style={{display:'flex',flexDirection:'column',gap:12,maxWidth:280}}>
+          {[['hook','Hook (0-6 s)'],['study','Metodología'],['stat','Resultado'],['cta','Cierre / CTA']].map(([k,label])=>(
+            <Tag key={k} active={overlay===k} onClick={()=>setOverlay(k)}>{label}</Tag>
+          ))}
+          <p style={{fontSize:13,lineHeight:1.6,color:'var(--text-muted)',marginTop:8}}>
+            Los gráficos se apoyan siempre en el scrim inferior. El texto del hook va en amarillo con caja, nunca suelto sobre el video.
+          </p>
+        </div>
+      </div>):null}
+
+      {tab==='carrusel'?(<div className="stage">
+        <div>
+          <Frame w={1080} h={1350} scale={0.42}><CarouselDeck index={slide}/></Frame>
+          <div className="cap" style={{display:'flex',alignItems:'center',gap:12}}>
+            {IconButton?<IconButton variant="subtle" size="sm" label="Anterior" onClick={()=>setSlide(s=>Math.max(0,s-1))}><i data-lucide="arrow-left" style={{width:16,height:16}}></i></IconButton>:null}
+            {IconButton?<IconButton variant="subtle" size="sm" label="Siguiente" onClick={()=>setSlide(s=>Math.min(4,s+1))}><i data-lucide="arrow-right" style={{width:16,height:16}}></i></IconButton>:null}
+            <span>Lámina {slide+1} de 5</span>
+          </div>
+        </div>
+        <div style={{display:'flex',flexDirection:'column',gap:10,maxWidth:300}}>
+          {['Cover · painpoint','Mito frente a evidencia','Metodología del estudio','Resultado en cifras','Aplicación + CTA'].map((t,i)=>(
+            <Tag key={t} active={slide===i} onClick={()=>setSlide(i)}>{String(i+1).padStart(2,'0')} · {t}</Tag>
+          ))}
+          {Badge?<Badge tone="neutral" style={{marginTop:8}}>1080 x 1350</Badge>:null}
+        </div>
+      </div>):null}
+    </div>
+  );
+}
+(async()=>{
+  const NS=await window.__ensureDS('../../',['ui_kits/social/ReelCover.jsx','ui_kits/social/ReelOverlay.jsx','ui_kits/social/CarouselDeck.jsx']);
+  ({Tabs,Tag,IconButton,Logo,Badge,ReelCover,ReelOverlay,CarouselDeck}=NS);
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+  window.__eccIcons();
+})();
+</script></body></html>

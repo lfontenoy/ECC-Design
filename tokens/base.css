@@ -1,0 +1,41 @@
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--surface-page);color:var(--text-body);font:var(--type-body);font-variation-settings:var(--vf-normal);-webkit-font-smoothing:antialiased;text-wrap:pretty}
+h1,h2,h3,h4{margin:0;color:var(--text-strong);font-family:var(--font-display);font-variation-settings:var(--vf-heading);letter-spacing:var(--tracking-tight)}
+h1{font-size:var(--text-h1);font-weight:var(--weight-bold);line-height:var(--leading-tight);letter-spacing:var(--tracking-display)}
+h2{font-size:var(--text-h2);font-weight:var(--weight-bold);line-height:var(--leading-snug)}
+h3{font-size:var(--text-h3);font-weight:var(--weight-semibold);line-height:var(--leading-snug);font-family:var(--font-heading)}
+h4{font-size:var(--text-h4);font-weight:var(--weight-semibold);line-height:var(--leading-snug);font-family:var(--font-heading)}
+p{margin:0}
+a{color:var(--text-link);text-decoration-color:color-mix(in oklab,var(--text-link) 35%,transparent);text-underline-offset:3px;transition:color var(--dur-fast) var(--ease-out),text-decoration-color var(--dur-fast) var(--ease-out)}
+a:hover{color:var(--text-link-hover);text-decoration-color:currentColor}
+::selection{background:var(--accent-evidence);color:var(--accent-evidence-ink)}
+:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+
+/* --- Tipografia display: mezcla familia, peso y eje de ancho de una vez. --- */
+.ecc-cover{font-family:var(--font-display);font-variation-settings:var(--vf-cover);font-weight:var(--weight-bold);line-height:var(--leading-cover);letter-spacing:var(--tracking-cover);text-transform:uppercase}
+.ecc-display{font-family:var(--font-display);font-variation-settings:var(--vf-display);font-weight:var(--weight-bold);line-height:var(--leading-tight);letter-spacing:var(--tracking-display)}
+.ecc-label{font:var(--type-label);letter-spacing:var(--tracking-label);text-transform:uppercase}
+.ecc-num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+
+/* --- Atmosfera. Toda superficie navy grande lleva halo y grano; nunca navy plano. --- */
+.ecc-grid{background-image:linear-gradient(var(--grid-line-dark) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line-dark) 1px,transparent 1px);background-size:34px 34px}
+.ecc-grid-light{background-image:linear-gradient(var(--grid-line-light) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line-light) 1px,transparent 1px);background-size:34px 34px}
+.ecc-atmos{position:relative;background:var(--ground-navy);isolation:isolate}
+.ecc-atmos::before,.ecc-atmos::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1}
+.ecc-atmos::before{background-image:linear-gradient(var(--grid-line-dark) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line-dark) 1px,transparent 1px),var(--glow-cyan),var(--glow-gold);background-size:34px 34px,34px 34px,100% 100%,100% 100%}
+.ecc-atmos::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");mix-blend-mode:overlay;opacity:.30}
+.ecc-grain{position:relative}
+.ecc-grain::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");mix-blend-mode:overlay;opacity:.26}
+/* Regla de medida: filete corto que abre un bloque, como marca de instrumento. */
+.ecc-rule{display:block;width:56px;height:3px;background:var(--accent-evidence)}
+/* Resaltado de evidencia sobre fondo claro: relleno amarillo con tinta navy.
+   Sustituye al texto amarillo, que sobre blanco no alcanza contraste legible. */
+.ecc-mark{background:var(--evidence-fill);color:var(--evidence-fill-ink);padding:.06em .22em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+/* Version discreta: subrayado grueso amarillo bajo texto navy. */
+.ecc-underline{background:linear-gradient(to top,var(--evidence-fill) 0,var(--evidence-fill) .34em,transparent .34em);padding:0 .06em}
+
+/* --- Entrada escalonada. Un solo gesto por vista, nada en bucle. --- */
+@keyframes ecc-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ecc-rise{animation:ecc-rise var(--dur-reveal) var(--ease-entrance) both}
+.ecc-rise-1{animation-delay:60ms}.ecc-rise-2{animation-delay:130ms}.ecc-rise-3{animation-delay:200ms}.ecc-rise-4{animation-delay:270ms}
+@media (prefers-reduced-motion:reduce){.ecc-rise{animation:none}*{transition-duration:1ms!important}}

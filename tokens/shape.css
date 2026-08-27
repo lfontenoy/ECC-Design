@@ -1,0 +1,22 @@
+:root{
+--radius-xs:3px;--radius-sm:7px;--radius-md:11px;--radius-lg:18px;--radius-xl:26px;--radius-pill:999px;
+--radius-card:var(--radius-lg);--radius-control:var(--radius-sm);--radius-chip:var(--radius-pill);
+--border-w-hair:1px;--border-w:2px;--border-w-heavy:3px;
+
+/* Sombras en dos capas: contacto corto + difusion larga, siempre tenidas de navy. */
+--shadow-sm:0 1px 1px rgba(11,20,37,.04),0 2px 6px -2px rgba(11,20,37,.09);
+--shadow-md:0 2px 4px -1px rgba(11,20,37,.07),0 12px 28px -8px rgba(11,20,37,.15);
+--shadow-lg:0 4px 8px -2px rgba(11,20,37,.09),0 28px 56px -18px rgba(11,20,37,.26);
+--shadow-on-dark:0 1px 0 rgba(255,255,255,.06) inset,0 32px 64px -28px rgba(0,0,0,.72);
+--shadow-hairline:inset 0 0 0 1px var(--border-subtle);
+/* Filo superior: 1px de luz en el borde alto de toda superficie oscura elevada. */
+--edge-top:inset 0 1px 0 rgba(255,255,255,.09);/* @kind other */
+--edge-top-strong:inset 0 1px 0 rgba(255,255,255,.16);/* @kind other */
+
+--ring-focus:0 0 0 3px rgba(109,205,242,.42);
+--ring-evidence:0 0 0 3px rgba(255,195,0,.32);
+
+/* Gradientes de proteccion para texto sobre imagen o video. */
+--scrim-bottom:linear-gradient(to top,rgba(6,12,24,.94) 0%,rgba(6,12,24,.68) 34%,rgba(6,12,24,0) 100%);/* @kind other */
+--scrim-top:linear-gradient(to bottom,rgba(6,12,24,.86) 0%,rgba(6,12,24,0) 100%);/* @kind other */
+}
