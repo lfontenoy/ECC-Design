@@ -398,6 +398,37 @@ _ds_bundle.js                componentes compilados; lo que cargan las cards
 Para ver cualquier card o kit: ábrelo directo en el navegador. `_ds_fallback.js` hace que funcionen sin
 build.
 
+### Volver a Claude Design
+
+El proyecto ya está en el formato nativo de Claude Design: `_ds_manifest.json`, `_ds_bundle.js`,
+marcadores `<!-- @dsCard ... -->` en cada preview y `source: spa`. No hace falta convertir nada; se
+empuja tal cual con la herramienta `DesignSync`, que sincroniza incrementalmente (nunca reemplaza
+el proyecto entero).
+
+Requiere autorización de design-system, que **solo se puede conceder desde una sesión interactiva**:
+
+```bash
+# 1. una sola vez, en Claude Code local (no en la web)
+/design-login
+
+# 2. desde el repo, pedirle a Claude que sincronice
+#    list_projects -> finalize_plan -> write_files
+```
+
+Rutas a incluir en el plan (`finalize_plan`):
+
+```
+styles.css  thumbnail.html  readme.md  SKILL.md  HANDOFF.md
+_ds_bundle.js  _ds_manifest.json  _adherence.oxlintrc.json
+tokens/**  components/**  guidelines/**  ui_kits/**  assets/**  uploads/**
+```
+
+Fuera del plan: `.claude/`, `node_modules/`, `tools/` y `.git/` — son andamiaje de Claude Code, no
+del sistema de diseño.
+
+Desde **Claude Code en la web** no se puede autorizar: ahí el camino es al revés, con
+"Send to Claude Code Web" desde Claude Design, que siembra el proyecto en el workspace.
+
 ### Tras editar un componente
 
 ```bash
