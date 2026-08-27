@@ -8,7 +8,7 @@ TikTok) de 60–90 s más las guías descargables que se piden por comentario ("
 PROTE"). Todo el sistema gira sobre una promesa: cada afirmación se rastrea a un estudio real citado
 por PMID.
 
-Este bundle contiene el sistema completo: tokens CSS, 17 componentes React, 21 cards de fundamentos y
+Este bundle contiene el sistema completo: tokens CSS, 17 componentes React, 22 cards de fundamentos y
 dos UI kits (contenido social y sitio del canal).
 
 ## Cómo usarlo en Claude Code
@@ -137,8 +137,11 @@ Lo que define el carácter tipográfico es **el eje de ancho**: el condensado de
 otra familia. Tres ajustes fijos vía `font-variation-settings`:
 
 - `--vf-cover` → `wdth 76, opsz 96` — covers y cifras hero (clase `.ecc-cover`)
-- `--vf-display` → `wdth 84, opsz 72` — h1, h2, wordmark (clase `.ecc-display`)
-- `--vf-heading` → `wdth 92, opsz 24` — titulares de interfaz
+- `--vf-display` → `wdth 84, opsz 72` — **h1 y h2 en `base.css`**, más el wordmark
+- `--vf-heading` → `wdth 92, opsz 24` — h3, h4 y titulares de interfaz
+
+`h1,h2` y `h3,h4` son reglas separadas: agrupar las cuatro dejaba a los titulares display con
+`opsz 24`, un eje óptico de interfaz aplicado a un titular de 46 px.
 
 Escala: cover 138/100/74 · display 64 · h1 46 · h2 33 · h3 24 · h4 19 · cuerpo 18/16/14 · caption 13 ·
 micro 11.
@@ -152,54 +155,88 @@ pasarles `scale` (`StudyMeta scale={2.4}`, `MythBuster scale={2.3}`) o el texto 
 ### Espaciado
 
 Escala 4 px: `--space-1` 4 · `-2` 8 · `-3` 12 · `-4` 16 · `-5` 20 · `-6` 24 · `-8` 32 · `-10` 40 ·
-`-12` 48 · `-16` 64 · `-20` 80 · `-24` 96 · `-32` 128.
-Ritmo: `--pad-card` 24 · `--gap-stack` 16 · `--gap-inline` 8 · `--gap-section` 80.
+`-12` 48 · `-16` 64 · `-20` 80 · `-24` 96 · `-28` 112 · `-32` 128 · `-36` 144 · `-40` 160.
+Ritmo: `--pad-card` 24 · `--gap-stack` 16 · `--gap-inline` 8 · **`--gap-section` 96** ·
+**`--gap-section-xl` 160** (corte entre actos).
 Contenedor web `--container-max` 1160 px · medida de prosa 64ch.
 Lienzos: Reel 1080×1920 (margen 68–76 px), post 1080×1350 (margen 90 px).
 
-### Radios (pasos impares, a propósito)
+**Colapso móvil (≤768 px):** `.ecc-bento` a una columna, `.ecc-split` a una, `.ecc-cols` a dos, la
+navegación en línea y el CTA de la isla ocultos, `.ecc-pad` de 32 px a 16 px. Titulares con `clamp()`.
 
-`--radius-xs` 3 · `--radius-sm` 7 (controles) · `--radius-md` 11 · `--radius-lg` 18 (tarjetas) ·
-`--radius-xl` 26 (bloques de lienzo) · `--radius-pill` 999. Nada más redondo que 26 px.
+### Radios y doble bisel
 
-### Sombras (dos capas: contacto corto + difusión larga, tintadas de navy)
+`--radius-xs` 4 · `--radius-sm` 10 · `--radius-md` 16 · `--radius-lg` 24 · **`--radius-shell` 32**
+(carcasa de tarjeta) · `--radius-pill` 999. `--radius-control` y `--radius-chip` son píldora.
+
+**Doble bisel:** carcasa con `--bezel-pad` 6 px, filo `--bezel-ring-*` y radio 32 px; núcleo con fondo
+propio, realce `--bezel-core-sheen-*` y radio `calc(var(--radius-shell) - var(--bezel-pad))` = 26 px.
+El radio del núcleo se calcula, no se estima: es lo que mantiene las curvas concéntricas.
+`Card` lo aplica por defecto (`bezel={false}` para anidados).
+
+### Sombras (ambientales: difusión larga y muy abierta, tintadas de navy)
 
 ```css
---shadow-sm: 0 1px 1px rgba(11,20,37,.04), 0 2px 6px -2px rgba(11,20,37,.09);
---shadow-md: 0 2px 4px -1px rgba(11,20,37,.07), 0 12px 28px -8px rgba(11,20,37,.15);
---shadow-lg: 0 4px 8px -2px rgba(11,20,37,.09), 0 28px 56px -18px rgba(11,20,37,.26);
---shadow-on-dark: 0 1px 0 rgba(255,255,255,.06) inset, 0 32px 64px -28px rgba(0,0,0,.72);
+--shadow-sm: 0 2px 6px -3px rgba(11,20,37,.05), 0 10px 24px -12px rgba(11,20,37,.10);
+--shadow-md: 0 4px 14px -6px rgba(11,20,37,.06), 0 24px 56px -20px rgba(11,20,37,.14);
+--shadow-lg: 0 8px 28px -10px rgba(11,20,37,.07), 0 48px 96px -32px rgba(11,20,37,.20);
+--shadow-on-dark: 0 1px 0 rgba(255,255,255,.07) inset, 0 40px 90px -40px rgba(6,12,24,.55);
 --edge-top: inset 0 1px 0 rgba(255,255,255,.09);
 --ring-focus: 0 0 0 3px rgba(109,205,242,.42);
 ```
 
-`--edge-top` es **obligatorio** en toda superficie oscura elevada: es lo que la separa del fondo sin
-un borde duro.
+Sin caída dura ni negro puro: la sombra sugiere aire alrededor de la pieza, no un objeto recortado.
+`--edge-top` es **obligatorio** en toda superficie oscura elevada.
+
+**Capas:** `--z-base` 0 · `--z-raised` 1 · `--z-grain` 2 · `--z-nav` 20 · `--z-overlay` 40 ·
+`--z-tooltip` 60. No hay z-index arbitrarios.
 
 ### Atmósfera (regla de acabado)
 
-**Ninguna superficie navy es plana.** Un navy sólido se lee como plantilla. `.ecc-atmos` compone:
-degradado `--ground-navy` + trama de 34 px al 7 % + `--glow-cyan` arriba-izquierda + `--glow-gold`
-abajo-derecha + grano al 30 % en `mix-blend-mode: overlay`. Variantes: `.ecc-grain` (solo ruido, para
-superficies con su propio fondo) y `.ecc-grid` / `.ecc-grid-light` (solo rejilla).
+**Ninguna superficie navy es plana.** `.ecc-atmos` compone: degradado `--ground-navy` + trama de 34 px
+al 7 % + `--glow-cyan` arriba-izquierda + `--glow-gold` abajo-derecha. Variantes `.ecc-grid` /
+`.ecc-grid-light` (solo rejilla).
+
+**Ninguna superficie se apoya plana sobre el fondo.** Toda tarjeta va en doble bisel (ver arriba).
+
+**Grano:** `.ecc-grain-layer`, una sola capa `position: fixed` por documento, `pointer-events: none`,
+que monta `__eccGrain()`. Ruido adjunto a contenedores que scrollean fuerza repintado continuo de GPU.
+Excepción: los lienzos sociales usan `.ecc-grain-canvas` (interno) porque se exportan como imagen y una
+capa fija del viewport no entra en la exportación.
+
+**Blur:** solo en elementos `fixed` o `sticky` — la isla de navegación y el menú overlay. Nunca sobre
+contenido que scrollea.
 
 Scrims de protección: `--scrim-bottom` y `--scrim-top`. Texto suelto sobre imagen: prohibido.
 
 ### Movimiento
 
-`--dur-fast` 140 ms (controles) · `--dur-base` 200 ms (superficies/estados) · `--dur-slow` 340 ms ·
-`--dur-reveal` 560 ms.
-`--ease-out cubic-bezier(.2,.8,.2,1)` por defecto · `--ease-entrance cubic-bezier(.16,1,.3,1)`.
-Sin bounces, sin parallax, sin loops. El único gesto orquestado es la entrada escalonada `.ecc-rise`
-+ `.ecc-rise-1…4` (retardos 60/130/200/270 ms, `translateY 10px → 0`), una vez por vista, en el hero,
-nunca en listados. Respeta `prefers-reduced-motion`.
+`--dur-fast` 240 ms (controles) · `--dur-base` 400 ms (superficies/estados) · `--dur-slow` 700 ms ·
+`--dur-reveal` 900 ms.
+**`--ease-fluid cubic-bezier(.32,.72,0,1)`** es la curva canónica del sistema.
+**`--ease-in-out` no existe**: la curva simétrica delata una transición por defecto.
+
+Sólo se animan `transform` y `opacity`; nunca `top`/`left`/`width`/`height`. `will-change` se pone
+mientras el elemento anima y se suelta al terminar (`.is-done`).
+
+**Revelación por scroll:** `.ecc-reveal` entra desde `translateY(64px)` + `blur(12px)` + opacidad 0 y
+resuelve en 900 ms; `.ecc-reveal-1…5` escalonan de 60 en 60 ms. La dispara un **IntersectionObserver**
+(nunca un listener de `scroll`), y un MutationObserver recoge los nodos que React monte después —
+React 18 hace commit asíncrono y una sola pasada se los perdería.
+
+**Failsafe:** el estado oculto cuelga de `[data-ecc-motion]`, que marca `__eccReveal()` al arrancar.
+Sin JS, con el JS caído o con `prefers-reduced-motion`, el contenido se ve. La animación es una mejora,
+nunca un requisito para leer la página.
+
+Sin bounces, sin parallax, sin loops.
 
 ### Estados
 
 - **Hover**: oscurece el relleno un paso (navy-700 → navy-800; gold-400 → gold-500); en ghost aparece
-  fondo `--navy-050`. Tarjetas clicables suben 3 px y pasan a `--shadow-lg`. Nunca se aclara un sólido
-  ni cambia el color del texto en hover de botón.
-- **Press**: un paso más oscuro y `translateY(1px)`. Sin escalados.
+  fondo `--navy-050`. Tarjetas clicables suben 4 px y pasan a `--shadow-lg`. En botones con
+  `iconRight`, el círculo interno se desplaza en diagonal y crece a `scale(1.05)`. Nunca se aclara un
+  sólido ni cambia el color del texto.
+- **Press**: un paso más oscuro y `scale(.98)` — el control se hunde, no se desplaza.
 - **Focus**: `--ring-focus` (anillo cyan 3 px). Nunca outline del navegador, nunca amarillo.
 - **Disabled**: opacidad .45, `cursor: not-allowed`, sin cambio de color.
 
@@ -214,11 +251,11 @@ nunca en listados. Respeta `prefers-reduced-motion`.
 
 | Componente | Notas |
 |---|---|
-| `Button` | variants `primary` / `evidence` / `outline` / `ghost` / `onDark`; sizes sm 36 / md 44 / lg 54 px; `iconLeft`, `iconRight`, `fullWidth` |
-| `IconButton` | 32/40/48 px, `label` obligatorio (aria), `round` para controles sobre video |
-| `Badge` | tones `evidence` / `myth` / `info` / `neutral` / `dark` / `outline` / `outlineOnDark`; mono mayúsculas, máx. 2 palabras |
+| `Button` | píldora; variants `primary` / `evidence` / `outline` / `ghost` / `onDark`; sizes sm 40 / md 48 / lg 56 px; `iconLeft` en línea, **`iconRight` anidado en su propio círculo** al ras del padding derecho; `fullWidth` |
+| `IconButton` | 32/40/48 px, píldora por defecto (`round={false}` para radio 10 px), `label` obligatorio (aria) |
+| `Badge` | eyebrow en píldora (mono 10 px, tracking `.2em`); tones `evidence` / `myth` / `info` / `neutral` / `dark` / `outline` / `outlineOnDark`; máx. 2 palabras |
 | `Tag` | chip de tema en pill, `active` para filtros, `onDark` |
-| `Card` | themes `light` / `dark` / `deep` / `void`; `grid`, `interactive`, `accent` (filete 3 px, solo mito/evidencia) |
+| `Card` | **doble bisel por defecto** (`bezel={false}` para anidados); themes `light` / `dark` / `deep` / `void`; `grid`, `interactive`, `accent` (filete 3 px, solo mito/evidencia); `className` se fusiona con las clases de la carcasa |
 | `Divider` | regla 1 px, con `label` rotula la sección siguiente |
 | `Logo` | variants `mark` / `horizontal` / `stacked`; `theme` elige el archivo del isotipo |
 | `Tabs` | subrayado cyan 2 px |
@@ -264,10 +301,12 @@ todo texto sobre fotograma con scrim o caja opaca.
 
 ### `ui_kits/web/` — sitio del canal
 
-`SiteHeader` (navy con blur, nav subrayado cyan, CTA amarillo) · `HomeHero` (atmósfera + entrada
-escalonada + tarjeta del estudio de la semana) · `VideoGrid` (parrilla 4:5 con filtro por tema y PMID
-visible) · `LeadMagnet` (captura de correo PESO/PROTE con estado enviado) · `StudyArticle` (ficha:
-mito → metodología → resultado → matices → referencias) · `SiteFooter`.
+`SiteHeader` (**isla flotante**: píldora de vidrio despegada, punto cyan en la activa, hamburguesa que
+muta a X y menú a pantalla completa con entrada escalonada; cierra con X, Escape o clic en el fondo) ·
+`HomeHero` (atmósfera + revelación escalonada + tarjeta del estudio en doble bisel) · `VideoGrid`
+(**bento asimétrico** de 12 columnas con filtro por tema y PMID visible) · `LeadMagnet` (captura de
+correo PESO/PROTE con estado enviado) · `StudyArticle` (ficha: mito → metodología → resultado →
+matices → referencias) · `SiteFooter`.
 
 `index.html` navega entre Videos / Fichas / Guías, filtra por tema, elige guía y envía el formulario.
 
@@ -283,7 +322,7 @@ mito → metodología → resultado → matices → referencias) · `SiteFooter`
 | Lead magnet | elegir PESO/PROTE, submit → estado "Enviado" con punto amarillo y opción de reenviar |
 | Ficha de estudio | volver a Videos con `arrow-left` |
 | Carrusel | flechas + chips numerados navegan las 5 láminas |
-| Entrada del hero | `.ecc-rise` escalonada 60/130/200/270 ms, una sola vez |
+| Entrada de bloque | `.ecc-reveal` por IntersectionObserver: 64 px + blur 12 px → 0 en 900 ms, escalonado de 60 en 60 ms, una sola vez por elemento |
 
 State necesario en el kit web: `page`, `filter`, `guia`, `sent`. En social: `tab`, `slide`, `overlay`.
 Todo local; no hay data fetching real.
@@ -299,17 +338,21 @@ Ambos isotipos se extrajeron programáticamente del PNG original entregado
 (`isotipo_ecc_navy_plano_1920x1080.png`): recorte al bounding box, key del fondo navy y separación del
 canal alfa. No se dibujó ningún gráfico.
 
-**Iconos: Lucide** vía CDN, trazo 2 px, fijado a `0.469.0`:
+**Iconos: Phosphor Light**, trazo ultraligero, fijado a `2.1.1`. Llega como **fuente de iconos** desde
+`tokens/fonts.css`, no como script: no hay paso de hidratación y el glifo pinta también en nodos que
+React monte después.
 
-```html
-<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+```css
+@import url("https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css");
+```
+```jsx
+<i className="ph-light ph-download-simple" style={{fontSize:17}}></i>
 ```
 
-En uso: `arrow-left`, `arrow-right`, `bookmark`, `share-2`, `more-horizontal`, `volume-x`, `mail`,
-`search`, `download`, `play`, `microscope`, `pin`, `check-circle-2`, `alert-triangle`. Tamaños 16–18 px
-en texto y botones, 20 px en IconButton, 24 px en nav. Color = `currentColor`, nunca amarillo.
-`createIcons()` sustituye el `<i>` por un `<svg>`, así que hay que re-llamarlo tras cada render que
-introduzca iconos nuevos (`ui_kits/_ds_fallback.js` trae `window.__eccIcons()` con reintento).
+En uso: `arrow-left`, `arrow-right`, `arrow-up-right`, `bookmark-simple`, `share-network`,
+`dots-three`, `speaker-slash`, `envelope-simple`, `magnifying-glass`, `download-simple`, `play`,
+`microscope`, `push-pin`, `check-circle`, `warning`. Tamaños 15–18 px en texto y botones, 20 px en
+IconButton, 24 px en nav. Tamaño con `font-size`, color con `currentColor`, nunca amarillo.
 
 **Unicode no se usa como icono.** Un glifo tipográfico en lugar del icono correcto (♪ por "silenciar")
 es un error, no un atajo.
@@ -323,7 +366,7 @@ El detalle completo está en `README.md` § CONTENT FUNDAMENTALS. Lo esencial:
 - Español neutro LATAM, **sin voseo**. Tuteo al viewer ("tú"), la marca habla en plural ("te enviamos").
 - Arco fijo: creencia común → negación → estudio → resultado en cifras → recomendación → CTA.
 - Painpoint antes que tecnicismo en cover, hook y titular.
-- Copy en frase normal; MAYÚSCULAS solo en covers tipográficos y rótulos mono `.ecc-label`.
+- Copy en frase normal; MAYÚSCULAS solo en covers tipográficos y rótulos mono (`.ecc-label`, `.ecc-eyebrow`).
 - Cifras siempre del estudio, traducidas a equivalentes cotidianos ("2 a 3 cafés").
 - Citas **siempre por PMID**. Nunca fabricar un PMID. Los matices van al comentario fijado.
 - Emoji solo en copy y solo este set: 📲 📈 💡 💬 🔬 👨🏽‍🔬. Nunca en interfaz.
@@ -343,15 +386,28 @@ tokens/                      fonts, colors, typography, spacing, shape, motion, 
 components/core/             Button, IconButton, Badge, Tag, Card, Divider, Logo, Tabs
 components/content/          StatFigure, PmidRef, StudyMeta, MythBuster, Callout
 components/forms/            Input, Select, Checkbox, Switch
-guidelines/                  21 cards de fundamentos (Colors, Type, Spacing, Brand)
+guidelines/                  22 cards de fundamentos (Colors, Type, Spacing, Brand)
 ui_kits/social/              ReelCover, ReelOverlay, CarouselDeck + index.html
 ui_kits/web/                 SiteHeader, HomeHero, VideoGrid, LeadMagnet, StudyArticle, SiteFooter
-ui_kits/_ds_fallback.js      transpila los .jsx en el navegador + helper de iconos
+ui_kits/_ds_fallback.js      transpila los .jsx en el navegador + runtime (grano, revelación)
+tools/build-bundle.mjs       regenera _ds_bundle.js y _ds_manifest.json desde los .jsx y los tokens
 _ds_bundle.js                componentes compilados; lo que cargan las cards
+.claude/skills/              high-end-visual-design, el skill que gobierna el acabado
 ```
 
 Para ver cualquier card o kit: ábrelo directo en el navegador. `_ds_fallback.js` hace que funcionen sin
 build.
+
+### Tras editar un componente
+
+```bash
+npm install --no-save @babel/core @babel/preset-react
+node tools/build-bundle.mjs
+```
+
+`_ds_bundle.js` es un artefacto compilado y **gana sobre los `.jsx`**: `_ds_fallback.js` solo transpila
+en el navegador si el bundle no expone `Button`. Editar un componente sin regenerar deja los kits
+mostrando la versión anterior, sin ningún error visible.
 
 ---
 
@@ -366,7 +422,7 @@ build.
 3. **Sin fotografía.** Los thumbnails y fotogramas son lienzos navy con tipografía. Cuando haya
    imágenes: fotograma real de gimnasio o laboratorio, frío y contrastado, sin grano ni filtros
    cálidos, y siempre bajo scrim antes de poner texto.
-4. **Iconos Lucide** son una sustitución declarada, no el set oficial.
+4. **Iconos Phosphor Light** son una sustitución declarada, no el set oficial.
 5. **Coral propuesto.** El amarillo lo dio la marca; el coral de mito es una decisión de sistema para
    separar "creencia falsa" de "hallazgo".
 6. **Los estudios y PMID de los ejemplos son relleno realista, no verificados.** No reutilizar en

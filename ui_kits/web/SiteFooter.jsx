@@ -5,9 +5,9 @@ export function SiteFooter({asset='../../assets/isotipo-ecc.png'}){
   const {Logo,Divider}=B;
   const cols=[['Contenido',['Reels','Fichas de estudio','Guías']],['Temas',['Hipertrofia','Nutrición','Sueño','Suplementación']],['Canal',['Cómo verificamos','Contacto','Colaboraciones']]];
   return (
-    <footer className="ecc-grain" style={{background:'var(--ground-void)',color:'var(--text-on-dark-muted)'}}>
-      <div style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'var(--space-16) var(--space-8) var(--space-10)',
-        display:'grid',gridTemplateColumns:'1.4fr repeat(3,1fr)',gap:'var(--space-12)'}}>
+    <footer style={{background:'var(--ground-void)',color:'var(--text-on-dark-muted)'}}>
+      <div className="ecc-cols ecc-pad" style={{maxWidth:'var(--container-max)',margin:'0 auto',
+        paddingTop:'var(--gap-section)',paddingBottom:'var(--space-10)'}}>
         <div>
           {Logo?<Logo variant="horizontal" theme="dark" size={40} src={asset}/>:null}
           <p style={{marginTop:'var(--space-5)',maxWidth:'32ch',fontSize:'var(--text-body-sm)',lineHeight:1.6,
@@ -24,7 +24,7 @@ export function SiteFooter({asset='../../assets/isotipo-ecc.png'}){
           </div>
         ))}
       </div>
-      <div style={{maxWidth:'var(--container-max)',margin:'0 auto',padding:'0 var(--space-8) var(--space-10)'}}>
+      <div className="ecc-pad" style={{maxWidth:'var(--container-max)',margin:'0 auto',paddingBottom:'var(--space-10)'}}>
         {Divider?<Divider onDark/>:null}
         <div style={{marginTop:'var(--space-5)',display:'flex',justifyContent:'space-between',gap:'var(--space-6)',
           fontFamily:'var(--font-mono)',fontSize:'var(--text-caption)',color:'var(--text-on-dark-faint)',flexWrap:'wrap'}}>

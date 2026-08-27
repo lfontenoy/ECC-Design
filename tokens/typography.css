@@ -15,7 +15,7 @@
 /* Escala. cover-* esta pensada para lienzos de 1080px (Reels, carrusel). */
 --text-cover-xl:138px;--text-cover:100px;--text-cover-sm:74px;
 --text-display:64px;--text-h1:46px;--text-h2:33px;--text-h3:24px;--text-h4:19px;
---text-body-lg:18px;--text-body-md:16px;--text-body-sm:14px;--text-caption:13px;--text-micro:11px;
+--text-body-lg:18px;--text-body-md:16px;--text-body-sm:14px;--text-caption:13px;--text-micro:11px;--text-eyebrow:10px;
 
 --leading-cover:0.86;--leading-tight:1.02;--leading-snug:1.22;--leading-body:1.58;--leading-loose:1.72;
 
@@ -23,7 +23,7 @@
 
 /* Tracking optico: cuanto mas grande el texto, mas cerrado. */
 --tracking-cover:-0.022em;--tracking-display:-0.018em;--tracking-tight:-0.012em;
---tracking-normal:0;--tracking-wide:0.01em;--tracking-label:0.15em;--tracking-mono:-0.01em;
+--tracking-normal:0;--tracking-wide:0.01em;--tracking-label:0.15em;--tracking-eyebrow:0.2em;--tracking-mono:-0.01em;
 
 /* Aliases semanticos */
 --type-cover:var(--weight-bold) var(--text-cover)/var(--leading-cover) var(--font-display);/* @kind other */
@@ -32,4 +32,5 @@
 --type-h3:var(--weight-semibold) var(--text-h3)/var(--leading-snug) var(--font-heading);/* @kind other */
 --type-body:var(--weight-regular) var(--text-body-md)/var(--leading-body) var(--font-body);/* @kind other */
 --type-label:var(--weight-medium) var(--text-micro)/1.2 var(--font-mono);/* @kind other */
+--type-eyebrow:var(--weight-medium) var(--text-eyebrow)/1.2 var(--font-mono);/* @kind other */
 }

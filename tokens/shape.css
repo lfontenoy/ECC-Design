@@ -1,13 +1,37 @@
 :root{
---radius-xs:3px;--radius-sm:7px;--radius-md:11px;--radius-lg:18px;--radius-xl:26px;--radius-pill:999px;
---radius-card:var(--radius-lg);--radius-control:var(--radius-sm);--radius-chip:var(--radius-pill);
+/* Radios — escala de squircle exagerado.
+   La carcasa del doble bisel es de 32px (--radius-shell); el nucleo se calcula
+   concentrico restando el padding de la carcasa, nunca a ojo. Los controles son
+   pildoras completas. */
+--radius-xs:4px;--radius-sm:10px;--radius-md:16px;--radius-lg:24px;--radius-xl:28px;--radius-shell:32px;--radius-pill:999px;
+--radius-card:var(--radius-shell);--radius-control:var(--radius-pill);--radius-chip:var(--radius-pill);
+
+/* Doble bisel (Doppelrand). Una superficie premium nunca se apoya plana sobre
+   el fondo: va dentro de una carcasa con su propio filo, y el nucleo lleva su
+   propio realce interior. El radio del nucleo es --radius-shell menos el
+   padding de la carcasa, para que las curvas queden concentricas. */
+--bezel-pad:6px;
+--bezel-core-radius:calc(var(--radius-shell) - var(--bezel-pad));
+--bezel-shell-light:rgba(11,20,37,.045);/* @kind color */
+--bezel-shell-dark:rgba(255,255,255,.055);/* @kind color */
+--bezel-ring-light:inset 0 0 0 1px rgba(11,20,37,.06);/* @kind other */
+--bezel-ring-dark:inset 0 0 0 1px rgba(255,255,255,.10);/* @kind other */
+--bezel-core-sheen-light:inset 0 1px 1px rgba(255,255,255,.9);/* @kind other */
+--bezel-core-sheen-dark:inset 0 1px 1px rgba(255,255,255,.15);/* @kind other */
+
 --border-w-hair:1px;--border-w:2px;--border-w-heavy:3px;
 
-/* Sombras en dos capas: contacto corto + difusion larga, siempre tenidas de navy. */
---shadow-sm:0 1px 1px rgba(11,20,37,.04),0 2px 6px -2px rgba(11,20,37,.09);
---shadow-md:0 2px 4px -1px rgba(11,20,37,.07),0 12px 28px -8px rgba(11,20,37,.15);
---shadow-lg:0 4px 8px -2px rgba(11,20,37,.09),0 28px 56px -18px rgba(11,20,37,.26);
---shadow-on-dark:0 1px 0 rgba(255,255,255,.06) inset,0 32px 64px -28px rgba(0,0,0,.72);
+/* Capas. No hay z-index arbitrarios: cada valor nombra un estrato del sistema.
+   Nada fuera de esta lista puede crear contexto de apilado propio. */
+--z-base:0;--z-raised:1;--z-grain:2;--z-nav:20;--z-overlay:40;--z-tooltip:60;/* @kind other */
+
+/* Sombras ambientales, difusas y largas. El skill prohibe la caida dura y
+   oscura: nada de negro puro ni de radios cortos de alto contraste. Todas van
+   tenidas de navy y reparten la densidad en dos capas muy abiertas. */
+--shadow-sm:0 2px 6px -3px rgba(11,20,37,.05),0 10px 24px -12px rgba(11,20,37,.10);
+--shadow-md:0 4px 14px -6px rgba(11,20,37,.06),0 24px 56px -20px rgba(11,20,37,.14);
+--shadow-lg:0 8px 28px -10px rgba(11,20,37,.07),0 48px 96px -32px rgba(11,20,37,.20);
+--shadow-on-dark:0 1px 0 rgba(255,255,255,.07) inset,0 40px 90px -40px rgba(6,12,24,.55);
 --shadow-hairline:inset 0 0 0 1px var(--border-subtle);
 /* Filo superior: 1px de luz en el borde alto de toda superficie oscura elevada. */
 --edge-top:inset 0 1px 0 rgba(255,255,255,.09);/* @kind other */

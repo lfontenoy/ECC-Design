@@ -60,9 +60,9 @@ sobre `--surface-page` strong 17.6 · body 10.8 · muted 6.0 · faint 4.6 · lin
 piso, no un gris decorativo: si un metadato necesita ser más tenue, se reduce su tamaño, no su contraste.
 
 **Casing.** Copy en frase normal ("Dormir 5.5 h cambia de dónde sale el peso"). MAYÚSCULAS solo en dos
-lugares: los covers/titulares tipográficos (Barlow Condensed) y los rótulos mono de 11 px
-(`.ecc-label`: PARTICIPANTES, DISEÑO, DURACIÓN). Nunca una frase entera en mayúsculas dentro de un
-párrafo.
+lugares: los covers/titulares tipográficos (Bricolage Grotesque condensado) y los rótulos mono
+(`.ecc-label` a 11 px y `.ecc-eyebrow` a 10 px: PARTICIPANTES, DISEÑO, DURACIÓN). Nunca una frase
+entera en mayúsculas dentro de un párrafo.
 
 **Cifras.** Siempre salen del estudio, nunca de memoria, y se traducen a equivalentes cotidianos:
 "200 a 400 mg, o sea 2 a 3 cafés"; "112 g de proteína, como una pechuga grande más dos huevos".
@@ -99,10 +99,16 @@ El isotipo ya contiene la tesis de la marca: **átomo + mancuerna**, laboratorio
 la extiende con un solo gesto: superficie navy con atmósfera de laboratorio, tipografía condensada de
 gimnasio y un resaltador amarillo que marca el dato verificado. Nada más brilla.
 
-La regla de acabado que gobierna todo: **ninguna superficie es plana.** Un navy sólido se lee como
-plantilla; el navy de ECC siempre lleva degradado, trama de 34 px, halo cyan y una capa de grano
-(`.ecc-atmos`). Y toda superficie oscura elevada lleva 1 px de luz en su borde superior
-(`--edge-top`), que es lo que separa una tarjeta del fondo sin recurrir a un borde duro.
+Dos reglas de acabado gobiernan todo:
+
+**Ninguna superficie es plana.** Un navy sólido se lee como plantilla; el navy de ECC siempre lleva
+degradado, trama de 34 px y halo cyan (`.ecc-atmos`), más la capa de grano global. Toda superficie
+oscura elevada lleva 1 px de luz en su borde superior (`--edge-top`).
+
+**Ninguna superficie se apoya directamente sobre el fondo.** Toda tarjeta va en **doble bisel**: una
+carcasa con su propio filo y radio de 32 px, y dentro un núcleo con su fondo, su realce superior y un
+radio concéntrico calculado (32 − 6 = 26 px). Es lo que hace que una pieza se lea como hardware
+mecanizado y no como un rectángulo con sombra. Ver `.ecc-bezel` / `.ecc-bezel-core`.
 
 ### Color
 - **Navy** es el color de la marca, tomado del fondo del isotipo original: `--navy-700 #224277`.
@@ -134,7 +140,7 @@ Tres familias variables, cada una con un trabajo:
 
 | Rol | Familia | Uso |
 |---|---|---|
-| Cover / display | **Bricolage Grotesque** 700–800, eje `wdth` | Covers 74–138 px, h1–h2, cifras hero, el wordmark. |
+| Cover / display | **Bricolage Grotesque** 700–800, eje `wdth` | Covers 74–138 px, h1–h2, cifras hero, el wordmark. Ninguna fuente del sistema está en la lista negra del skill (Inter, Roboto, Arial, Open Sans, Helvetica). |
 | Interfaz y cuerpo | **Instrument Sans** 400–700 | h3–h4, párrafos 18/16/14, botones, nav. Medida 64ch, `leading 1.58`. |
 | Datos y citas | **JetBrains Mono** 400–600 | PMID, n, dosis, duraciones, rótulos `.ecc-label` y "con Ciencia" del lockup. |
 
@@ -142,8 +148,11 @@ Lo que hace distinta la tipografía de ECC es **el eje de ancho**: Bricolage Gro
 `wdth`, así que el condensado de los covers es real, no una familia aparte. Tres ajustes fijos:
 
 - `--vf-cover` → `wdth 76, opsz 96` — covers y cifras hero (clase `.ecc-cover`).
-- `--vf-display` → `wdth 84, opsz 72` — h1, h2, wordmark (clase `.ecc-display`).
-- `--vf-heading` → `wdth 92, opsz 24` — titulares de interfaz.
+- `--vf-display` → `wdth 84, opsz 72` — **h1 y h2 lo reciben en `base.css`**, más el wordmark.
+- `--vf-heading` → `wdth 92, opsz 24` — h3, h4 y titulares de interfaz.
+
+`h1,h2` y `h3,h4` son dos reglas separadas a propósito. Agruparlas dejaba a los titulares display con
+`opsz 24`, que es el eje óptico de un texto de interfaz aplicado a un titular de 46 px.
 
 Tracking óptico: cuanto más grande el texto, más cerrado (`-0.022em` en cover, `0` en cuerpo, `+0.15em`
 en rótulos mono). Números siempre tabulares (clase `.ecc-num`). La condensada nunca se usa en párrafos;
@@ -154,62 +163,122 @@ carrusel hay que pasarles `scale` (`StudyMeta scale={2.4}`, `MythBuster scale={2
 ilegible en el móvil.
 
 ### Espaciado y layout
-Escala base 4 px (`--space-1` … `--space-32`). Ritmo real: 24 px de padding de tarjeta, 16 px entre
-elementos apilados, 8 px entre elementos en línea, 80 px entre secciones. Contenedor web 1160 px.
-Los bloques abren con `.ecc-rule` (filete amarillo de 56×3 px) o con un rótulo `.ecc-label`, nunca con un
-título suelto.
-Los lienzos sociales tienen margen fijo de 64–88 px (`1080 px` de ancho). El header del sitio es el
-único elemento fijo (`position: sticky`, 76 px, con blur); en los lienzos verticales el logo va fijo
-arriba a la izquierda y el PMID abajo.
+Escala base 4 px (`--space-1` … `--space-40`). Ritmo real: 24 px de padding de tarjeta, 16 px entre
+elementos apilados, 8 px entre elementos en línea. Contenedor web 1160 px.
+
+**El aire entre secciones es macro.** `--gap-section` son 96 px y `--gap-section-xl` 160 px, este
+último para el corte entre actos (hero → archivo, archivo → captura). La página respira fuerte; 80 px
+contra un contenedor de 1160 px quedaba apretado.
+
+Los bloques abren con `.ecc-rule` (filete amarillo de 56×3 px) o con un **eyebrow** `.ecc-eyebrow`
+(píldora mono de 10 px, tracking `.2em`, mayúsculas), nunca con un título suelto.
+
+**Navegación en isla.** El header no se pega al borde superior: es una píldora de vidrio despegada,
+centrada y del ancho de su contenido (`.ecc-island`, `position: sticky`, `top: 24px`). Lleva la
+hamburguesa que se transforma en X y abre un menú a pantalla completa con vidrio pesado y entrada
+escalonada de los enlaces. Se cierra con la X, con Escape o con clic en el fondo.
+
+**Parrilla bento.** El archivo de videos no es una rejilla simétrica de 3 columnas: es un bento de 12
+columnas con piezas de tamaño distinto (`.ecc-bento`, `.ecc-bento-feature` 7 col × 2 filas,
+`-wide` 5 col, `-third` 4 col).
+
+**Colapso móvil (regla universal).** Por debajo de 768 px ninguna asimetría sobrevive: los spans del
+bento se resetean a una columna, `.ecc-split` pasa a columna única, `.ecc-cols` del pie a dos, la
+navegación en línea y el CTA de la isla desaparecen (queda la hamburguesa) y el margen lateral baja de
+32 px a 16 px (`.ecc-pad`). Los titulares grandes usan `clamp()`, nunca un tamaño fijo.
+
+Los lienzos sociales tienen margen fijo de 64–88 px (`1080 px` de ancho); ahí el logo va fijo arriba a
+la izquierda y el PMID abajo.
 
 ### Bordes, radios y tarjetas
-Hairline de 1 px (`--border-subtle #DCE5F1` en claro, `rgba(255,255,255,.16)` sobre navy).
-Radios en pasos impares para que no se lean como plantilla: controles 7 px, tarjetas 18 px, bloques
-grandes de lienzo 26 px, chips pill. Nada más redondo que 26 px y nunca esquinas totalmente rectas en
-tarjetas.
-Una tarjeta clara = fondo blanco + hairline + `--shadow-sm`. Una tarjeta navy = atmósfera
-(`Card theme="deep"`) + hairline translúcido + `--edge-top` + `--shadow-on-dark`, sin borde de color. El filete izquierdo de 3 px existe
-(`Card accent`) pero se reserva al par mito/evidencia: no es un patrón decorativo de uso libre.
+Hairline de 1 px (`--border-subtle #E2EAF5` en claro, `rgba(255,255,255,.13)` sobre navy). Nunca gris
+neutro: siempre teñido de navy.
+
+**Radios:** xs 4 · sm 10 · md 16 · lg 24 · **shell 32** · pill 999. Los controles son píldoras
+completas (`--radius-control` = pill) y las tarjetas usan la carcasa de 32 px (`--radius-card`). El
+núcleo del doble bisel **no se estima**: es `calc(var(--radius-shell) - var(--bezel-pad))`, para que
+las curvas queden concéntricas.
+
+**Toda tarjeta es doble bisel.** `Card` lo aplica por defecto; `bezel={false}` devuelve la versión
+plana para casos anidados, donde un bisel dentro de otro se lee como ruido. Sobre claro la carcasa es
+`--bezel-shell-light` con anillo `--bezel-ring-light`; sobre navy, las variantes `-dark`. El filete
+izquierdo de 3 px existe (`Card accent`) pero se reserva al par mito/evidencia.
+
+**Botones:** píldora, padding generoso (24 px a `md`), y el icono final **nunca va desnudo**: se anida
+en su propio círculo al ras del padding derecho (`iconRight`). En hover ese círculo se desplaza en
+diagonal y crece un punto; el botón entero se hunde a `scale(.98)` al presionar.
 
 ### Sombras
-Tres pasos, y **cada sombra son dos capas**: un contacto corto de 1–4 px y una difusión larga de
-6–56 px, ambas tintadas de navy (nunca negro puro sobre claro). `--shadow-sm` (reposo),
-`--shadow-md` (formularios y elementos flotantes), `--shadow-lg` (hover de tarjeta clicable).
-Sobre navy la elevación se resuelve con `--edge-top` + `--shadow-on-dark`: el filo de luz es
-obligatorio, es lo que evita que la tarjeta oscura se hunda en el fondo.
+Tres pasos, **ambientales**: difusión muy abierta y larga (24–96 px), tintada de navy, sin caída dura
+ni negro puro. La sombra sugiere aire alrededor de la pieza, no un objeto recortado sobre una mesa.
+`--shadow-sm` (reposo), `--shadow-md` (formularios y flotantes), `--shadow-lg` (hover de tarjeta
+clicable). Sobre navy la elevación la dan `--edge-top` + `--shadow-on-dark` más el filo de la carcasa
+del bisel.
+
+**Capas.** No hay z-index arbitrarios. Cada valor nombra un estrato: `--z-base` 0 · `--z-raised` 1 ·
+`--z-grain` 2 · `--z-nav` 20 · `--z-overlay` 40 · `--z-tooltip` 60. Nada fuera de esa lista crea
+contexto de apilado propio.
 
 ### Fondos, texturas e imagen
 - **Atmósfera** (`.ecc-atmos`): la superficie navy por defecto. Degradado `--ground-navy` + trama de
-  34 px + `--glow-cyan` arriba a la izquierda + `--glow-gold` abajo a la derecha + grano al 30 % en
-  `mix-blend-mode: overlay`. Va en heroes, covers, láminas y tarjetas `theme="deep"`.
+  34 px + `--glow-cyan` arriba a la izquierda + `--glow-gold` abajo a la derecha. Va en heroes,
+  covers, láminas y tarjetas `theme="deep"`.
 - **Trama blueprint**: rejilla técnica de 34 px a 1 px, `rgba(154,241,254,.07)` sobre navy
   (`.ecc-grid`). Sobre fondo claro (`.ecc-grid-light`) solo en bloques sin texto.
-- **Grano** (`.ecc-grain`): la capa de ruido sola, para superficies que ya tienen su propio fondo
-  (footer, fotogramas de video).
+- **Grano** (`.ecc-grain-layer`): **una sola capa fija por documento**, sin eventos de puntero, que
+  monta el runtime (`__eccGrain()`). Adjuntar ruido a cada superficie que scrollea fuerza repintado
+  continuo de GPU; fijo al viewport se compone una vez.
+  **Excepción única:** los lienzos sociales se exportan como imagen y una capa fija del viewport no
+  entraría en esa exportación, así que ahí el grano sigue siendo interno (`.ecc-grain-canvas`). No
+  scrollean, así que no hay repintado que evitar.
 - **Sin ilustración**. La marca no usa ilustración hand-drawn ni iconografía decorativa grande.
 - **Fotografía**: no se entregó ninguna. Cuando exista, el criterio es fotograma real de gimnasio o
   laboratorio, frío y contrastado, sin grano ni filtros cálidos, y **siempre** bajo scrim
   (`--scrim-bottom`) o caja opaca antes de poner texto encima. Texto suelto sobre imagen: prohibido.
-- **Transparencia y blur**: solo dos usos. Header del sitio (`rgba(19,37,70,.92)` + `blur(12px)`) y
-  las cajas de dato sobre fotograma (`rgba(13,26,49,.82)` + `blur(8px)`). No hay glassmorphism
-  decorativo.
+- **Transparencia y blur**: **solo sobre elementos `fixed` o `sticky`**. Nunca sobre contenido que
+  scrollea: el filtro se recalcula en cada frame de scroll y hunde el rendimiento en móvil. Los dos
+  únicos usos son la isla de navegación (`--surface-island` + `blur(20px)`) y el menú overlay
+  (`blur(40px)`), ambos fijos. Las cajas de dato sobre fotograma de los lienzos sociales llevan blur
+  porque son lienzos estáticos de exportación, no superficies que scrollean.
 
 ### Movimiento
-Discreto y funcional: 140 ms para controles, 200 ms para tarjetas y estados, 340 ms para entradas de
-bloque. Curvas: `--ease-out cubic-bezier(.2,.8,.2,1)` por defecto, `--ease-entrance` para apariciones.
+Física de resorte, nunca curvas por defecto. **`--ease-fluid cubic-bezier(.32,.72,0,1)`** es la curva
+canónica: arranca rápido y frena largo, como se mueve una masa real. Ningún cambio de estado es
+instantáneo: todo interpola.
+
+Duraciones: 240 ms controles · 400 ms superficies y estados · 700 ms gestos largos · 900 ms
+revelaciones. **`--ease-in-out` no existe en el sistema** — la curva simétrica es exactamente la que
+delata una transición por defecto.
+
+**Sólo se animan `transform` y `opacity`.** Nunca `top`, `left`, `width` ni `height`: disparan layout
+en cada frame. `will-change` se pone únicamente mientras el elemento anima y se suelta al terminar.
+
 **Sin bounces, sin parallax, sin auto-animaciones en loop.**
 
-El único gesto orquestado es la **entrada escalonada** de la vista: `.ecc-rise` más
-`.ecc-rise-1…4` (560 ms, retardos de 60/130/200/270 ms, `translateY 10px → 0`). Uno por vista, en el
-hero, nunca en listados. Respeta `prefers-reduced-motion`.
+**Revelación por scroll.** Ningún elemento aparece estático. `.ecc-reveal` entra desde 64 px abajo,
+desenfocado (`blur(12px)`) y a opacidad 0, y resuelve en 900 ms; `.ecc-reveal-1…5` escalonan de 60 en
+60 ms. El desenfoque es transitorio y termina en 0, así que no queda ningún filtro vivo sobre
+contenido que scrollea.
+
+Lo dispara un **IntersectionObserver**, nunca un listener de `scroll` (ese corre en cada frame y
+provoca reflow continuo). Un MutationObserver recoge los nodos que React monte después, porque React 18
+hace commit de forma asíncrona y una sola pasada se los perdería.
+
+**El estado oculto es opt-in del runtime.** Cuelga de `[data-ecc-motion]`, que marca `__eccReveal()` al
+arrancar. Sin JS, con el JS caído o con `prefers-reduced-motion`, el contenido se ve: la animación es
+una mejora, nunca un requisito para leer la página.
+
 En video, la revelación de cifras es un corte o un fade rápido, nunca un conteo animado que distorsione
 el dato.
 
 ### Estados
 - **Hover** oscurece el relleno un paso (navy-700 → navy-800; gold-400 → gold-500); en variantes
-  fantasma aparece un fondo `--navy-050`. Las tarjetas clicables suben 3 px y pasan a `--shadow-lg`.
-  Nunca se aclara un sólido ni se cambia el color de la tipografía en hover de botón.
-- **Press** oscurece un paso más y baja 1 px (`translateY(1px)`). Sin escalados.
+  fantasma aparece un fondo `--navy-050`. Las tarjetas clicables suben 4 px y pasan a `--shadow-lg`.
+  En botones con `iconRight`, el círculo interno se desplaza en diagonal y crece a `scale(1.05)`:
+  la tensión cinética va dentro del botón, no en el botón entero. Nunca se aclara un sólido ni se
+  cambia el color de la tipografía en hover.
+- **Press** oscurece un paso más y el control se hunde a `scale(.98)` — escala, que es transform puro,
+  no desplazamiento.
 - **Focus** anillo cyan de 3 px `--ring-focus` (nunca outline del navegador, nunca amarillo).
 - **Disabled** opacidad .45 y cursor `not-allowed`, sin cambio de color.
 - **Selección de texto** amarillo con tinta navy (`::selection`).
@@ -220,23 +289,25 @@ el dato.
 
 No se entregó ningún set de iconos, fuente de iconos ni SVG con la marca. Estado y decisión:
 
-- **Sustitución declarada:** **Lucide** vía CDN, trazo de 2 px, esquinas redondeadas, sin relleno — es
-  lo más cercano al trazo uniforme del isotipo. **Confirmar o reemplazar con el usuario.** Está cableada
-  en las tres cards de componentes y en los dos `index.html` de los UI kits:
+- **Sustitución declarada:** **Phosphor Light** — trazo ultraligero y preciso, sin relleno.
+  **Confirmar o reemplazar con el usuario.** Llega como **fuente de iconos** desde `tokens/fonts.css`,
+  así que no hay paso de hidratación: el glifo pinta directo, también en nodos que React monte después.
 
-  ```html
-  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  ```css
+  @import url("https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css");
   ```
   ```jsx
-  <i data-lucide="bookmark" style={{width:20,height:20}}></i>
-  // tras montar: lucide.createIcons({attrs:{'stroke-width':2}})
+  <i className="ph-light ph-download-simple" style={{fontSize:17}}></i>
   ```
-- Iconos en uso: `arrow-left`, `arrow-right`, `bookmark`, `share-2`, `more-horizontal`, `volume-x`,
-  `mail`, `search`, `download`, `play`, `microscope`, `pin`, `check-circle-2`, `alert-triangle`.
-- Tamaños: 16–18 px en línea con texto y en botones, 20 px en IconButton, 24 px en navegación. El color
-  es el del texto que acompaña (`currentColor`), nunca amarillo.
-- `createIcons()` reemplaza el `<i>` por un `<svg>`, así que hay que volver a llamarlo después de cada
-  render de React que introduzca iconos nuevos.
+- Iconos en uso: `arrow-left`, `arrow-right`, `arrow-up-right`, `bookmark-simple`, `share-network`,
+  `dots-three`, `speaker-slash`, `envelope-simple`, `magnifying-glass`, `download-simple`, `play`,
+  `microscope`, `push-pin`, `check-circle`, `warning`.
+- Tamaños: 15–18 px en línea con texto y en botones, 20 px en `IconButton`, 24 px en navegación. El
+  tamaño se controla con `font-size` y el color con `currentColor` — nunca amarillo, nunca un color
+  de acento propio.
+- **Por qué no Lucide.** El set anterior era Lucide a 2 px. Un trazo de 2 px sobre texto de 13–16 px
+  pesa demasiado y arrastra la interfaz hacia lo genérico; Phosphor Light da la misma familia
+  geométrica con un trazo que no compite con la tipografía.
 - **El único activo gráfico propio es el isotipo** (`assets/isotipo-ecc.png`). No se dibujaron marcas,
   ilustraciones ni pictogramas nuevos: cuando falta un gráfico, el sistema usa tipografía o una cifra.
 - **Unicode no se usa como icono.** Un glifo tipográfico en lugar del icono correcto (♪ por "silenciar",
@@ -265,14 +336,20 @@ estándar más cinco piezas propias del negocio del canal, cada una con una raz�
 - `thumbnail.html` — tile del sistema.
 - `readme.md` (este archivo), `SKILL.md` — guía portable para agentes.
 
-**`tokens/`** — `fonts.css`, `colors.css`, `typography.css`, `spacing.css`, `shape.css`, `motion.css`,
-`base.css` (reset, enlaces, `.ecc-grid`, `.ecc-label`).
+**`tokens/`** — `fonts.css` (webfonts + iconos Phosphor), `colors.css`, `typography.css`,
+`spacing.css`, `shape.css` (radios, doble bisel, sombras, capas), `motion.css`, `base.css` (reset,
+titulares, `.ecc-bezel`, `.ecc-eyebrow`, `.ecc-reveal`, `.ecc-island`, `.ecc-bento`, `.ecc-split`,
+grano fijo).
+
+**`tools/`** — `build-bundle.mjs`. Regenera `_ds_bundle.js` y `_ds_manifest.json` desde los `.jsx` y
+los `tokens/*.css`. **Correr después de tocar cualquier componente**, o los kits seguirán mostrando la
+versión compilada anterior.
 
 **`assets/`** — `isotipo-ecc.png` (transparente), `isotipo-ecc-navy.png` (cuadro navy).
 
-**`guidelines/`** — 20 cards de fundamentos: Colors (navy, cyan, evidencia/mito, superficies, texto),
-Type (cover, titulares, cuerpo, datos), Spacing (escala, en uso, radios, elevación, filo de luz,
-entrada escalonada), Brand (isotipo, lockup, atmósfera, trama, protección de texto).
+**`guidelines/`** — 22 cards de fundamentos: Colors (navy, cyan, evidencia/mito, superficies, texto),
+Type (cover, titulares, cuerpo, datos), Spacing (escala, en uso, radios, doble bisel, elevación, filo
+de luz, revelación por scroll), Brand (isotipo, lockup, atmósfera, trama, protección de texto).
 
 **`components/`**
 - `core/` — `Button`, `IconButton`, `Badge`, `Tag`, `Card`, `Divider`, `Logo`, `Tabs`
@@ -282,8 +359,42 @@ entrada escalonada), Brand (isotipo, lockup, atmósfera, trama, protección de t
 **`ui_kits/`**
 - `social/` — `ReelCover`, `ReelOverlay`, `CarouselDeck` + `index.html`
 - `web/` — `SiteHeader`, `HomeHero`, `VideoGrid`, `LeadMagnet`, `StudyArticle`, `SiteFooter` + `index.html`
-- `_ds_fallback.js` — permite abrir los kits y las cards de componentes aunque `_ds_bundle.js` no esté
-  compilado (transpila los `.jsx` en el navegador). No sustituye al bundle en proyectos consumidores.
+- `_ds_fallback.js` — dos trabajos. Permite abrir los kits y las cards aunque `_ds_bundle.js` no esté
+  compilado (transpila los `.jsx` en el navegador), y expone el **runtime del sistema**:
+  `__eccGrain()` monta la capa de grano fija y `__eccReveal()` arma la revelación por scroll.
+  `__eccIcons()` se conserva porque las cards ya la llaman, y ahora solo invoca a las otras dos.
+
+---
+
+## PROCEDENCIA DE LAS REGLAS
+
+Este sistema nació de la marca (isotipo, `#FFC300`, reglas editoriales del canal) y luego se pasó
+entero por el skill **high-end-visual-design**, versionado en
+`.claude/skills/high-end-visual-design/`. De ahí vienen, y no de la marca:
+
+| Regla | Origen |
+|---|---|
+| Doble bisel en toda tarjeta | skill · §4A |
+| Botón-en-botón y hover magnético | skill · §4B, §5B |
+| Eyebrow en píldora antes de cada titular | skill · §4C |
+| Aire de sección 96–160 px | skill · §4C |
+| Isla flotante, hamburguesa que muta, overlay escalonado | skill · §5A |
+| Revelación por scroll en todo elemento | skill · §5C |
+| Curvas cubic-bezier propias, prohibido `ease-in-out` | skill · §2, §5 |
+| Radios de 32 px y controles en píldora | skill · §2, §4A |
+| Bento asimétrico en vez de rejilla de 3 columnas | skill · §3B |
+| Phosphor Light en vez de Lucide | skill · §2 |
+| Blur solo en `fixed`/`sticky`, grano en capa fija, z-index nombrados | skill · §6 |
+| Colapso móvil universal por debajo de 768 px | skill · §3 |
+
+**Lo que la marca conservó frente al skill:** la paleta completa, las tres familias tipográficas, la
+regla del amarillo según fondo (texto sobre navy, relleno sobre claro), el coral exclusivo del mito, la
+atmósfera navy, el filete `.ecc-rule` y las plantillas de los lienzos sociales.
+
+**Lo que se descartó del skill:** el *Creative Variance Engine* (§3), que pide no repetir layout ni
+estética entre piezas. Es la premisa opuesta a un sistema de marca: ECC necesita que un Reel se
+reconozca como ECC al tercer frame, scrolleando. La varianza es virtud en el portfolio de una agencia
+y defecto en un canal.
 
 ---
 
@@ -296,6 +407,11 @@ entrada escalonada), Brand (isotipo, lockup, atmósfera, trama, protección de t
 2. **Wordmark reconstruido.** El lockup ("ENTRENA / con Ciencia") es tipográfico, no el logotipo real.
    Si existe archivo oficial, sustituirlo y ajustar `components/core/Logo.jsx`.
 3. **Sin fotografía.** Los thumbnails y fotogramas son lienzos navy con tipografía.
-4. **Iconos Lucide** son una sustitución, no el set oficial.
+4. **Iconos Phosphor Light** son una sustitución, no el set oficial. Se cargan como fuente de iconos
+   desde unpkg; si la marca entrega un set propio, reemplazar el `@import` de `tokens/fonts.css`.
 5. **Coral propuesto.** El amarillo `#FFC300` lo dio la marca; el coral de mito sigue siendo una
    decisión de sistema para separar "creencia falsa" de "hallazgo".
+6. **El bundle es un artefacto compilado.** `_ds_bundle.js` gana sobre los `.jsx` cuando se abren los
+   kits: `_ds_fallback.js` solo transpila en el navegador si el bundle no expone `Button`. Editar un
+   componente sin correr `node tools/build-bundle.mjs` deja los kits mostrando la versión anterior,
+   sin ningún error visible. Es la trampa más fácil de pisar en este repositorio.

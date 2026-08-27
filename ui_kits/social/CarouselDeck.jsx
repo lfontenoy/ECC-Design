@@ -7,7 +7,7 @@ export function CarouselDeck({index=0,asset='../../assets/isotipo-ecc.png',asset
   const {StatFigure,StudyMeta,MythBuster,PmidRef,Badge,Button,Divider}=B;
 
   const Shell=({children,dark=true,pad=90})=>(
-    <div className={dark?'ecc-atmos':'ecc-grain'} style={{position:'relative',width:1080,height:1350,overflow:'hidden',
+    <div className={'ecc-grain-canvas '+(dark?'ecc-atmos':'')} style={{position:'relative',width:1080,height:1350,overflow:'hidden',
       padding:pad,background:dark?undefined:'var(--surface-page)',
       color:dark?'var(--text-on-dark)':'var(--text-body)',display:'flex',flexDirection:'column'}}>
       <div style={{display:'flex',alignItems:'center',gap:20,marginBottom:58}}>

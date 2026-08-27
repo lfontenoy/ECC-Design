@@ -4,3 +4,13 @@
    Bricolage Grotesque aporta el eje de ancho (wdth) que sostiene los covers condensados.
    Si existen binarios oficiales, reemplaza este @import por @font-face locales en assets/fonts/. */
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&family=JetBrains+Mono:wght@400..700&display=swap");
+
+/* Iconos: Phosphor Light. Trazo ultraligero y preciso, sin relleno.
+   Se entrega como fuente de iconos, asi que no hay paso de hidratacion:
+   <i class="ph-light ph-download"></i> pinta directo, tambien dentro de React.
+   El tamano se controla con font-size y el color con currentColor. */
+@import url("https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css");
+
+/* Los iconos heredan el color del texto que acompanan y se alinean a la caja
+   optica, no a la linea base. Nunca llevan color de acento propio. */
+[class*="ph-light"]{display:inline-flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0}

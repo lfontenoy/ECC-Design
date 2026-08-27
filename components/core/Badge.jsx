@@ -13,9 +13,9 @@ const TONES={
 export function Badge({tone='neutral',children,style,...rest}){
   const t=TONES[tone]||TONES.neutral;
   return (
-    <span style={{display:'inline-flex',alignItems:'center',gap:6,height:23,padding:'0 9px',
-      font:'var(--type-label)',letterSpacing:'var(--tracking-label)',textTransform:'uppercase',
-      color:t.fg,background:t.bg,border:'var(--border-w-hair) solid '+t.bd,borderRadius:'var(--radius-xs)',
+    <span style={{display:'inline-flex',alignItems:'center',gap:7,height:26,padding:'0 12px',
+      font:'var(--type-eyebrow)',letterSpacing:'var(--tracking-eyebrow)',textTransform:'uppercase',
+      color:t.fg,background:t.bg,border:'var(--border-w-hair) solid '+t.bd,borderRadius:'var(--radius-pill)',
       whiteSpace:'nowrap',...style}} {...rest}>{children}</span>
   );
 }

@@ -8,7 +8,7 @@ const VARIANTS={
   onDark:{bg:'var(--surface-glass)',fg:'var(--white)',bd:'var(--border-on-dark)',hover:'rgba(255,255,255,.18)'}
 };
 
-export function IconButton({variant='ghost',size='md',label,disabled=false,round=false,children,style,...rest}){
+export function IconButton({variant='ghost',size='md',label,disabled=false,round=true,children,style,...rest}){
   const [hover,setHover]=React.useState(false);
   const d=SIZES[size]||SIZES.md, v=VARIANTS[variant]||VARIANTS.ghost;
   return (
@@ -16,8 +16,9 @@ export function IconButton({variant='ghost',size='md',label,disabled=false,round
       onMouseEnter={()=>setHover(true)} onMouseLeave={()=>setHover(false)}
       style={{width:d,height:d,display:'inline-flex',alignItems:'center',justifyContent:'center',
         color:v.fg,background:hover&&!disabled?v.hover:v.bg,border:'var(--border-w-hair) solid '+v.bd,
-        borderRadius:round?'var(--radius-pill)':'var(--radius-control)',cursor:disabled?'not-allowed':'pointer',
-        opacity:disabled?.45:1,transition:'var(--transition-control)',...style}} {...rest}>
+        borderRadius:round?'var(--radius-pill)':'var(--radius-sm)',cursor:disabled?'not-allowed':'pointer',
+        opacity:disabled?.45:1,transform:hover&&!disabled?'scale(1.05)':'none',
+        transition:'var(--transition-control)',...style}} {...rest}>
       {children}
     </button>
   );

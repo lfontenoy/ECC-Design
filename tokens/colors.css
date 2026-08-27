@@ -15,6 +15,8 @@
 --surface-navy:var(--navy-700);--surface-deep:var(--navy-900);--surface-black:var(--navy-950);--surface-void:var(--navy-975);
 --surface-card-dark:var(--navy-850);--surface-overlay:rgba(6,12,24,.76);
 --surface-glass:rgba(255,255,255,.055);--surface-glass-strong:rgba(255,255,255,.09);
+/* Isla de navegacion: vidrio pesado, unico elemento con blur junto al overlay. */
+--surface-island:rgba(18,35,64,.72);
 
 /* --- Texto --- */
 /* Toda la escala de tinta sobre --surface-page pasa 4.5:1 (AA texto pequeno):

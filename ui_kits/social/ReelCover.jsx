@@ -10,7 +10,7 @@ export function ReelCover({variant='question',words='Dormir poco te frena',highl
     letterSpacing:'var(--tracking-cover)',textTransform:'uppercase',color:'var(--white)',margin:0};
 
   return (
-    <div className="ecc-atmos" style={{position:'relative',width:1080,height:1920,overflow:'hidden'}}>
+    <div className="ecc-atmos ecc-grain-canvas" style={{position:'relative',width:1080,height:1920,overflow:'hidden'}}>
       {/* barra de encuadre: filo de luz en el borde superior */}
       <div style={{position:'absolute',top:0,left:0,right:0,height:1,background:'rgba(255,255,255,.14)'}}/>
 

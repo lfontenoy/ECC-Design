@@ -6,7 +6,6 @@
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="../../_ds_bundle.js"></script>
 <script src="../_ds_fallback.js"></script>
-<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
 <style>body{margin:0;background:var(--surface-page)}
 .wrap{padding:28px 32px;display:flex;flex-direction:column;gap:24px}
 .bar{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
@@ -62,8 +61,8 @@ function App(){
         <div>
           <Frame w={1080} h={1350} scale={0.42}><CarouselDeck index={slide}/></Frame>
           <div className="cap" style={{display:'flex',alignItems:'center',gap:12}}>
-            {IconButton?<IconButton variant="subtle" size="sm" label="Anterior" onClick={()=>setSlide(s=>Math.max(0,s-1))}><i data-lucide="arrow-left" style={{width:16,height:16}}></i></IconButton>:null}
-            {IconButton?<IconButton variant="subtle" size="sm" label="Siguiente" onClick={()=>setSlide(s=>Math.min(4,s+1))}><i data-lucide="arrow-right" style={{width:16,height:16}}></i></IconButton>:null}
+            {IconButton?<IconButton variant="subtle" size="sm" label="Anterior" onClick={()=>setSlide(s=>Math.max(0,s-1))}><i className="ph-light ph-arrow-left" style={{fontSize:16}}></i></IconButton>:null}
+            {IconButton?<IconButton variant="subtle" size="sm" label="Siguiente" onClick={()=>setSlide(s=>Math.min(4,s+1))}><i className="ph-light ph-arrow-right" style={{fontSize:16}}></i></IconButton>:null}
             <span>Lámina {slide+1} de 5</span>
           </div>
         </div>

@@ -1,4 +1,4 @@
-/* @ds-bundle: {"format":4,"namespace":"EntrenaConCienciaDesignSystem_ad72a9","components":[{"name":"Callout","sourcePath":"components/content/Callout.jsx"},{"name":"MythBuster","sourcePath":"components/content/MythBuster.jsx"},{"name":"PmidRef","sourcePath":"components/content/PmidRef.jsx"},{"name":"StatFigure","sourcePath":"components/content/StatFigure.jsx"},{"name":"StudyMeta","sourcePath":"components/content/StudyMeta.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Divider","sourcePath":"components/core/Divider.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"Tabs","sourcePath":"components/core/Tabs.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"CarouselDeck","sourcePath":"ui_kits/social/CarouselDeck.jsx"},{"name":"ReelCover","sourcePath":"ui_kits/social/ReelCover.jsx"},{"name":"ReelOverlay","sourcePath":"ui_kits/social/ReelOverlay.jsx"},{"name":"HomeHero","sourcePath":"ui_kits/web/HomeHero.jsx"},{"name":"LeadMagnet","sourcePath":"ui_kits/web/LeadMagnet.jsx"},{"name":"SiteFooter","sourcePath":"ui_kits/web/SiteFooter.jsx"},{"name":"SiteHeader","sourcePath":"ui_kits/web/SiteHeader.jsx"},{"name":"StudyArticle","sourcePath":"ui_kits/web/StudyArticle.jsx"},{"name":"VideoGrid","sourcePath":"ui_kits/web/VideoGrid.jsx"}],"sourceHashes":{"components/content/Callout.jsx":"817663857138","components/content/MythBuster.jsx":"6c35d661ffeb","components/content/PmidRef.jsx":"9b3a46d180de","components/content/StatFigure.jsx":"3119ecf79aff","components/content/StudyMeta.jsx":"9e871d28b76b","components/core/Badge.jsx":"0d4dd1c315c9","components/core/Button.jsx":"e05aa365ac68","components/core/Card.jsx":"1d4f6f2a44f6","components/core/Divider.jsx":"f40ee51e2482","components/core/IconButton.jsx":"a90ffbe7bfee","components/core/Logo.jsx":"dd04210788bf","components/core/Tabs.jsx":"3ec581b9f36e","components/core/Tag.jsx":"c4457cf87390","components/forms/Checkbox.jsx":"6a2890ef978d","components/forms/Input.jsx":"e44b04049faf","components/forms/Select.jsx":"c1c3221778ee","components/forms/Switch.jsx":"61d77559198d","ui_kits/social/CarouselDeck.jsx":"5610d817291b","ui_kits/social/ReelCover.jsx":"587e7e5a88e8","ui_kits/social/ReelOverlay.jsx":"bafcaab73c82","ui_kits/web/HomeHero.jsx":"14ea1ea9ea54","ui_kits/web/LeadMagnet.jsx":"364c6f383992","ui_kits/web/SiteFooter.jsx":"7ced55a60243","ui_kits/web/SiteHeader.jsx":"278ece430dc4","ui_kits/web/StudyArticle.jsx":"1d6fb10ab1a5","ui_kits/web/VideoGrid.jsx":"4013feeb583f"},"inlinedExternals":[],"unexposedExports":[]} */
+/* @ds-bundle: {"format":4,"namespace":"EntrenaConCienciaDesignSystem_ad72a9","components":[{"name":"Callout","sourcePath":"components/content/Callout.jsx"},{"name":"MythBuster","sourcePath":"components/content/MythBuster.jsx"},{"name":"PmidRef","sourcePath":"components/content/PmidRef.jsx"},{"name":"StatFigure","sourcePath":"components/content/StatFigure.jsx"},{"name":"StudyMeta","sourcePath":"components/content/StudyMeta.jsx"},{"name":"Badge","sourcePath":"components/core/Badge.jsx"},{"name":"Button","sourcePath":"components/core/Button.jsx"},{"name":"Card","sourcePath":"components/core/Card.jsx"},{"name":"Divider","sourcePath":"components/core/Divider.jsx"},{"name":"IconButton","sourcePath":"components/core/IconButton.jsx"},{"name":"Logo","sourcePath":"components/core/Logo.jsx"},{"name":"Tabs","sourcePath":"components/core/Tabs.jsx"},{"name":"Tag","sourcePath":"components/core/Tag.jsx"},{"name":"Checkbox","sourcePath":"components/forms/Checkbox.jsx"},{"name":"Input","sourcePath":"components/forms/Input.jsx"},{"name":"Select","sourcePath":"components/forms/Select.jsx"},{"name":"Switch","sourcePath":"components/forms/Switch.jsx"},{"name":"CarouselDeck","sourcePath":"ui_kits/social/CarouselDeck.jsx"},{"name":"ReelCover","sourcePath":"ui_kits/social/ReelCover.jsx"},{"name":"ReelOverlay","sourcePath":"ui_kits/social/ReelOverlay.jsx"},{"name":"HomeHero","sourcePath":"ui_kits/web/HomeHero.jsx"},{"name":"LeadMagnet","sourcePath":"ui_kits/web/LeadMagnet.jsx"},{"name":"SiteFooter","sourcePath":"ui_kits/web/SiteFooter.jsx"},{"name":"SiteHeader","sourcePath":"ui_kits/web/SiteHeader.jsx"},{"name":"StudyArticle","sourcePath":"ui_kits/web/StudyArticle.jsx"},{"name":"VideoGrid","sourcePath":"ui_kits/web/VideoGrid.jsx"}],"sourceHashes":{"components/content/Callout.jsx":"817663857138","components/content/MythBuster.jsx":"6c35d661ffeb","components/content/PmidRef.jsx":"9b3a46d180de","components/content/StatFigure.jsx":"3119ecf79aff","components/content/StudyMeta.jsx":"9e871d28b76b","components/core/Badge.jsx":"7bd97a2bf8f8","components/core/Button.jsx":"83aa64e672b8","components/core/Card.jsx":"0be5757ef398","components/core/Divider.jsx":"f40ee51e2482","components/core/IconButton.jsx":"07d0d584fac1","components/core/Logo.jsx":"dd04210788bf","components/core/Tabs.jsx":"3ec581b9f36e","components/core/Tag.jsx":"c4457cf87390","components/forms/Checkbox.jsx":"6a2890ef978d","components/forms/Input.jsx":"e44b04049faf","components/forms/Select.jsx":"c1c3221778ee","components/forms/Switch.jsx":"61d77559198d","ui_kits/social/CarouselDeck.jsx":"9df693b9d8db","ui_kits/social/ReelCover.jsx":"c40bd431ca4e","ui_kits/social/ReelOverlay.jsx":"12370f2272f1","ui_kits/web/HomeHero.jsx":"4d330f6158a1","ui_kits/web/LeadMagnet.jsx":"d3c0d240ea6a","ui_kits/web/SiteFooter.jsx":"ddbafa2a2697","ui_kits/web/SiteHeader.jsx":"5fce9da1bd06","ui_kits/web/StudyArticle.jsx":"061dcf08810f","ui_kits/web/VideoGrid.jsx":"1c84bc463b2f"},"inlinedExternals":[],"unexposedExports":[]} */
 
 (() => {
 
@@ -413,16 +413,16 @@ function Badge({
     style: {
       display: 'inline-flex',
       alignItems: 'center',
-      gap: 6,
-      height: 23,
-      padding: '0 9px',
-      font: 'var(--type-label)',
-      letterSpacing: 'var(--tracking-label)',
+      gap: 7,
+      height: 26,
+      padding: '0 12px',
+      font: 'var(--type-eyebrow)',
+      letterSpacing: 'var(--tracking-eyebrow)',
       textTransform: 'uppercase',
       color: t.fg,
       background: t.bg,
       border: 'var(--border-w-hair) solid ' + t.bd,
-      borderRadius: 'var(--radius-xs)',
+      borderRadius: 'var(--radius-pill)',
       whiteSpace: 'nowrap',
       ...style
     }
@@ -434,24 +434,34 @@ Object.assign(__ds_scope, { Badge });
 // components/core/Button.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* El icono final nunca va desnudo al lado del texto: se anida en su propio
+   circulo, al ras del padding interior derecho. En hover ese circulo se
+   desplaza en diagonal y crece un punto, lo que genera la tension cinetica
+   interna del boton mientras el boton entero se hunde al presionar. */
 const SIZES = {
   sm: {
-    minHeight: 36,
-    padding: '0 16px',
+    minHeight: 40,
+    padX: 18,
     fontSize: 'var(--text-body-sm)',
-    gap: 8
+    gap: 8,
+    dot: 24,
+    inset: 4
   },
   md: {
-    minHeight: 44,
-    padding: '0 20px',
+    minHeight: 48,
+    padX: 24,
     fontSize: 'var(--text-body-md)',
-    gap: 10
+    gap: 10,
+    dot: 32,
+    inset: 6
   },
   lg: {
-    minHeight: 54,
-    padding: '0 28px',
+    minHeight: 56,
+    padX: 30,
     fontSize: 'var(--text-body-lg)',
-    gap: 12
+    gap: 12,
+    dot: 38,
+    inset: 7
   }
 };
 const VARIANTS = {
@@ -462,7 +472,8 @@ const VARIANTS = {
     hover: 'var(--navy-800)',
     active: 'var(--navy-900)',
     edge: 'var(--edge-top)',
-    lift: 'var(--shadow-sm)'
+    lift: 'var(--shadow-sm)',
+    dot: 'rgba(255,255,255,.14)'
   },
   evidence: {
     bg: 'var(--gold-400)',
@@ -471,7 +482,8 @@ const VARIANTS = {
     hover: 'var(--gold-500)',
     active: 'var(--gold-600)',
     edge: 'inset 0 1px 0 rgba(255,255,255,.35)',
-    lift: 'var(--shadow-sm)'
+    lift: 'var(--shadow-sm)',
+    dot: 'rgba(6,12,24,.12)'
   },
   outline: {
     bg: 'transparent',
@@ -480,7 +492,8 @@ const VARIANTS = {
     hover: 'var(--navy-050)',
     active: 'var(--navy-100)',
     edge: 'none',
-    lift: 'none'
+    lift: 'none',
+    dot: 'rgba(11,20,37,.06)'
   },
   ghost: {
     bg: 'transparent',
@@ -489,7 +502,8 @@ const VARIANTS = {
     hover: 'var(--navy-050)',
     active: 'var(--navy-100)',
     edge: 'none',
-    lift: 'none'
+    lift: 'none',
+    dot: 'rgba(11,20,37,.06)'
   },
   onDark: {
     bg: 'var(--surface-glass-strong)',
@@ -498,7 +512,8 @@ const VARIANTS = {
     hover: 'rgba(255,255,255,.17)',
     active: 'rgba(255,255,255,.24)',
     edge: 'var(--edge-top-strong)',
-    lift: 'none'
+    lift: 'none',
+    dot: 'rgba(255,255,255,.12)'
   }
 };
 function Button({
@@ -517,6 +532,7 @@ function Button({
   const s = SIZES[size] || SIZES.md,
     v = VARIANTS[variant] || VARIANTS.primary;
   const bg = disabled ? v.bg : press ? v.active : hover ? v.hover : v.bg;
+  const live = !disabled;
   return /*#__PURE__*/React.createElement("button", _extends({
     disabled: disabled,
     onMouseEnter: () => setHover(true),
@@ -530,11 +546,14 @@ function Button({
       display: fullWidth ? 'flex' : 'inline-flex',
       width: fullWidth ? '100%' : 'auto',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: iconRight ? 'space-between' : 'center',
       minHeight: s.minHeight,
-      padding: s.padding,
       gap: s.gap,
       fontSize: s.fontSize,
+      /* Con icono final el padding derecho se cierra al inset para que el
+         circulo quede al ras de la pildora. */
+      paddingLeft: s.padX,
+      paddingRight: iconRight ? s.inset : s.padX,
       fontFamily: 'var(--font-heading)',
       fontWeight: 'var(--weight-semibold)',
       letterSpacing: 'var(--tracking-wide)',
@@ -542,15 +561,37 @@ function Button({
       color: v.fg,
       background: bg,
       border: 'var(--border-w-hair) solid ' + v.bd,
-      borderRadius: 'var(--radius-control)',
+      borderRadius: 'var(--radius-pill)',
       boxShadow: disabled ? 'none' : [v.edge, press ? 'none' : v.lift].filter(x => x && x !== 'none').join(',') || 'none',
       cursor: disabled ? 'not-allowed' : 'pointer',
       opacity: disabled ? .45 : 1,
-      transform: press && !disabled ? 'translateY(1px)' : 'none',
+      /* Se hunde al presionar, no se desplaza: escala, que es transform puro. */
+      transform: press && live ? 'scale(.98)' : 'none',
       transition: 'var(--transition-control)',
       ...style
     }
-  }, rest), iconLeft, children, iconRight);
+  }, rest), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: s.gap,
+      minWidth: 0
+    }
+  }, iconLeft, children), iconRight ? /*#__PURE__*/React.createElement("span", {
+    "aria-hidden": "true",
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: s.dot,
+      height: s.dot,
+      flexShrink: 0,
+      borderRadius: 'var(--radius-pill)',
+      background: v.dot,
+      transform: hover && live ? 'translate3d(4px,-1px,0) scale(1.05)' : 'none',
+      transition: 'transform var(--dur-base) var(--ease-fluid)'
+    }
+  }, iconRight) : null);
 }
 Object.assign(__ds_scope, { Button });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Button.jsx", error: String((e && e.message) || e) }); }
@@ -558,12 +599,20 @@ Object.assign(__ds_scope, { Button });
 // components/core/Card.jsx
 try { (() => {
 function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+/* Doble bisel (Doppelrand). Una tarjeta nunca se apoya plana sobre el fondo:
+   va dentro de una carcasa con su propio filo y radio grande, y el nucleo
+   lleva su fondo, su realce superior y un radio concentrico calculado
+   (--radius-shell menos el padding de la carcasa). Es el acabado por defecto;
+   `bezel={false}` devuelve la tarjeta plana para casos anidados, donde un
+   segundo bisel dentro de otro se lee como ruido. */
 function Card({
   theme = 'light',
   padding = 'md',
   interactive = false,
   grid = false,
   accent = null,
+  bezel = true,
+  className = '',
   children,
   style,
   ...rest
@@ -582,25 +631,22 @@ function Card({
     myth: 'var(--accent-myth)',
     info: 'var(--accent-info)'
   };
-  return /*#__PURE__*/React.createElement("div", _extends({
-    onMouseEnter: () => setHover(true),
-    onMouseLeave: () => setHover(false),
-    className: [grid ? dark ? 'ecc-grid' : 'ecc-grid-light' : '', dark ? 'ecc-grain' : ''].filter(Boolean).join(' ') || undefined,
+  const core = /*#__PURE__*/React.createElement("div", {
+    className: grid ? dark ? 'ecc-grid' : 'ecc-grid-light' : undefined,
     style: {
       position: 'relative',
       overflow: 'hidden',
       padding: pads[padding],
       background: bg,
-      borderRadius: 'var(--radius-card)',
-      border: 'var(--border-w-hair) solid ' + (dark ? 'var(--border-on-dark)' : 'var(--border-subtle)'),
-      boxShadow: dark ? 'var(--edge-top),var(--shadow-on-dark)' : interactive && hover ? 'var(--shadow-lg)' : 'var(--shadow-sm)',
-      color: dark ? 'var(--text-on-dark)' : 'var(--text-body)',
-      transform: interactive && hover ? 'translateY(-3px)' : 'none',
-      transition: 'var(--transition-surface)',
-      cursor: interactive ? 'pointer' : 'default',
-      ...style
+      flex: '1 1 auto',
+      display: 'flex',
+      flexDirection: 'column',
+      minHeight: 0,
+      borderRadius: bezel ? 'var(--bezel-core-radius)' : 'var(--radius-card)',
+      boxShadow: [dark ? 'var(--bezel-core-sheen-dark)' : 'var(--bezel-core-sheen-light)', dark ? 'var(--shadow-on-dark)' : interactive && hover ? 'var(--shadow-lg)' : 'var(--shadow-sm)'].join(','),
+      color: dark ? 'var(--text-on-dark)' : 'var(--text-body)'
     }
-  }, rest), accent ? /*#__PURE__*/React.createElement("span", {
+  }, accent ? /*#__PURE__*/React.createElement("span", {
     style: {
       position: 'absolute',
       left: 0,
@@ -608,9 +654,24 @@ function Card({
       bottom: 0,
       width: 3,
       background: accents[accent],
-      zIndex: 1
+      zIndex: 'var(--z-raised)'
     }
   }) : null, children);
+  const shell = bezel ? dark ? 'ecc-bezel ecc-bezel-on-dark' : 'ecc-bezel' : '';
+  return /*#__PURE__*/React.createElement("div", _extends({
+    onMouseEnter: () => setHover(true),
+    onMouseLeave: () => setHover(false),
+    className: [shell, className].filter(Boolean).join(' ') || undefined,
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100%',
+      transform: interactive && hover ? 'translate3d(0,-4px,0)' : 'none',
+      transition: 'var(--transition-surface)',
+      cursor: interactive ? 'pointer' : 'default',
+      ...style
+    }
+  }, rest), core);
 }
 Object.assign(__ds_scope, { Card });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "components/core/Card.jsx", error: String((e && e.message) || e) }); }
@@ -704,7 +765,7 @@ function IconButton({
   size = 'md',
   label,
   disabled = false,
-  round = false,
+  round = true,
   children,
   style,
   ...rest
@@ -726,9 +787,10 @@ function IconButton({
       color: v.fg,
       background: hover && !disabled ? v.hover : v.bg,
       border: 'var(--border-w-hair) solid ' + v.bd,
-      borderRadius: round ? 'var(--radius-pill)' : 'var(--radius-control)',
+      borderRadius: round ? 'var(--radius-pill)' : 'var(--radius-sm)',
       cursor: disabled ? 'not-allowed' : 'pointer',
       opacity: disabled ? .45 : 1,
+      transform: hover && !disabled ? 'scale(1.05)' : 'none',
       transition: 'var(--transition-control)',
       ...style
     }
@@ -1190,7 +1252,7 @@ function CarouselDeck({
     dark = true,
     pad = 90
   }) => /*#__PURE__*/React.createElement("div", {
-    className: dark ? 'ecc-atmos' : 'ecc-grain',
+    className: 'ecc-grain-canvas ' + (dark ? 'ecc-atmos' : ''),
     style: {
       position: 'relative',
       width: 1080,
@@ -1486,7 +1548,7 @@ function ReelCover({
     margin: 0
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: "ecc-atmos",
+    className: "ecc-atmos ecc-grain-canvas",
     style: {
       position: 'relative',
       width: 1080,
@@ -1700,7 +1762,7 @@ function ReelOverlay({
     borderRadius: 'var(--radius-xl)'
   };
   return /*#__PURE__*/React.createElement("div", {
-    className: "ecc-grain",
+    className: "ecc-grain-canvas",
     style: {
       position: 'relative',
       width: 1080,
@@ -1938,17 +2000,15 @@ function HomeHero() {
       borderBottom: '1px solid var(--border-on-dark)'
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "ecc-split ecc-pad",
     style: {
       maxWidth: 'var(--container-max)',
       margin: '0 auto',
-      padding: 'var(--space-20) var(--space-8)',
-      display: 'grid',
-      gridTemplateColumns: '1.12fr .88fr',
-      gap: 'var(--space-12)',
-      alignItems: 'center'
+      paddingTop: 'var(--gap-section-xl)',
+      paddingBottom: 'var(--gap-section)'
     }
   }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "ecc-rise ecc-rise-1",
+    className: "ecc-reveal ecc-reveal-1",
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -1964,10 +2024,10 @@ function HomeHero() {
   }), Badge ? /*#__PURE__*/React.createElement(Badge, {
     tone: "outlineOnDark"
   }, "Fitness basado en evidencia") : null), /*#__PURE__*/React.createElement("h1", {
-    className: "ecc-cover ecc-rise ecc-rise-2",
+    className: "ecc-cover ecc-reveal ecc-reveal-2",
     style: {
-      marginTop: 'var(--space-5)',
-      fontSize: 74,
+      marginTop: 'var(--space-6)',
+      fontSize: 'clamp(42px,6.4vw,78px)',
       color: 'var(--white)'
     }
   }, "Entrena con ", /*#__PURE__*/React.createElement("span", {
@@ -1975,7 +2035,7 @@ function HomeHero() {
       color: 'var(--gold-400)'
     }
   }, "evidencia"), ",", /*#__PURE__*/React.createElement("br", null), "no con mitos"), /*#__PURE__*/React.createElement("p", {
-    className: "ecc-rise ecc-rise-3",
+    className: "ecc-reveal ecc-reveal-3",
     style: {
       marginTop: 'var(--space-6)',
       maxWidth: '41ch',
@@ -1986,44 +2046,37 @@ function HomeHero() {
       color: 'var(--text-on-dark-muted)'
     }
   }, "Cada video cuenta la historia de un estudio: qu\xE9 midi\xF3, en qui\xE9nes y qu\xE9 encontr\xF3. Sin promesas m\xE1gicas y con el PMID a la vista."), /*#__PURE__*/React.createElement("div", {
-    className: "ecc-rise ecc-rise-4",
+    className: "ecc-reveal ecc-reveal-4",
     style: {
       display: 'flex',
       gap: 'var(--space-3)',
-      marginTop: 'var(--space-8)',
+      marginTop: 'var(--space-10)',
       flexWrap: 'wrap'
     }
   }, Button ? /*#__PURE__*/React.createElement(Button, {
     variant: "evidence",
     size: "lg",
-    iconLeft: /*#__PURE__*/React.createElement("i", {
-      "data-lucide": "play",
+    iconRight: /*#__PURE__*/React.createElement("i", {
+      className: "ph-light ph-play",
       style: {
-        width: 18,
-        height: 18,
-        display: 'inline-flex'
+        fontSize: 17
       }
     })
   }, "Ver los videos") : null, Button ? /*#__PURE__*/React.createElement(Button, {
     variant: "onDark",
     size: "lg",
     iconLeft: /*#__PURE__*/React.createElement("i", {
-      "data-lucide": "microscope",
+      className: "ph-light ph-microscope",
       style: {
-        width: 18,
-        height: 18,
-        display: 'inline-flex'
+        fontSize: 18
       }
     })
   }, "C\xF3mo verificamos") : null)), /*#__PURE__*/React.createElement("div", {
-    className: "ecc-rise ecc-rise-3",
+    className: "ecc-reveal ecc-reveal-3 ecc-bezel ecc-bezel-on-dark"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ecc-bezel-core ecc-bezel-core-on-dark",
     style: {
-      background: 'var(--surface-glass)',
-      border: '1px solid var(--border-on-dark)',
-      borderRadius: 'var(--radius-xl)',
-      padding: 'var(--space-8)',
-      boxShadow: 'var(--edge-top),var(--shadow-on-dark)',
-      backdropFilter: 'blur(8px)'
+      padding: 'var(--pad-card-lg)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -2070,7 +2123,7 @@ function HomeHero() {
     onDark: true,
     pmid: "20921542",
     label: "Estudio hero"
-  }) : null))));
+  }) : null)))));
 }
 Object.assign(__ds_scope, { HomeHero });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/web/HomeHero.jsx", error: String((e && e.message) || e) }); }
@@ -2097,21 +2150,21 @@ function LeadMagnet() {
       borderBottom: '1px solid var(--border-subtle)'
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "ecc-split ecc-split-form ecc-pad",
     style: {
       maxWidth: 'var(--container-max)',
       margin: '0 auto',
-      padding: 'var(--space-20) var(--space-8)',
-      display: 'grid',
-      gridTemplateColumns: '1fr 420px',
-      gap: 'var(--space-16)',
-      alignItems: 'center'
+      paddingTop: 'var(--gap-section-xl)',
+      paddingBottom: 'var(--gap-section-xl)'
     }
-  }, /*#__PURE__*/React.createElement("div", null, Badge ? /*#__PURE__*/React.createElement(Badge, {
-    tone: "neutral"
-  }, "Gu\xEDas gratuitas") : null, /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ecc-reveal"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "ecc-eyebrow"
+  }, "Gu\xEDas gratuitas"), /*#__PURE__*/React.createElement("h2", {
     style: {
       marginTop: 'var(--space-4)',
-      fontSize: 'var(--text-h1)',
+      fontSize: 'clamp(30px,4.4vw,46px)',
       lineHeight: 'var(--leading-tight)',
       letterSpacing: 'var(--tracking-display)'
     }
@@ -2135,8 +2188,8 @@ function LeadMagnet() {
     style: {
       appearance: 'none',
       cursor: 'pointer',
-      padding: '11px 19px',
-      borderRadius: 'var(--radius-control)',
+      padding: '12px 22px',
+      borderRadius: 'var(--radius-pill)',
       fontFamily: 'var(--font-mono)',
       fontSize: 14,
       letterSpacing: 'var(--tracking-mono)',
@@ -2145,12 +2198,11 @@ function LeadMagnet() {
       border: '1px solid ' + (guía === g ? 'var(--navy-700)' : 'var(--border-strong)')
     }
   }, "Comenta ", g)))), /*#__PURE__*/React.createElement("div", {
+    className: "ecc-reveal ecc-reveal-2 ecc-bezel"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "ecc-bezel-core",
     style: {
-      background: 'var(--surface-card)',
-      border: '1px solid var(--border-subtle)',
-      borderRadius: 'var(--radius-card)',
-      padding: 'var(--pad-card-lg)',
-      boxShadow: 'var(--shadow-md)'
+      padding: 'var(--pad-card-lg)'
     }
   }, sent ? /*#__PURE__*/React.createElement("div", {
     style: {
@@ -2212,11 +2264,9 @@ function LeadMagnet() {
     required: true,
     placeholder: "nombre@correo.com",
     prefix: /*#__PURE__*/React.createElement("i", {
-      "data-lucide": "mail",
+      className: "ph-light ph-envelope-simple",
       style: {
-        width: 17,
-        height: 17,
-        display: 'inline-flex'
+        fontSize: 17
       }
     })
   }) : null, Checkbox ? /*#__PURE__*/React.createElement(Checkbox, {
@@ -2227,13 +2277,19 @@ function LeadMagnet() {
     type: "submit",
     variant: "evidence",
     fullWidth: true,
-    size: "lg"
+    size: "lg",
+    iconRight: /*#__PURE__*/React.createElement("i", {
+      className: "ph-light ph-arrow-right",
+      style: {
+        fontSize: 17
+      }
+    })
   }, "Recibir la gu\xEDa ", guía) : null, Divider ? /*#__PURE__*/React.createElement(Divider, null) : null, /*#__PURE__*/React.createElement("span", {
     style: {
       fontSize: 'var(--text-caption)',
       color: 'var(--text-faint)'
     }
-  }, "Un correo por semana. Puedes salir con un clic.")))));
+  }, "Un correo por semana. Puedes salir con un clic."))))));
 }
 Object.assign(__ds_scope, { LeadMagnet });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/web/LeadMagnet.jsx", error: String((e && e.message) || e) }); }
@@ -2250,19 +2306,17 @@ function SiteFooter({
   } = B;
   const cols = [['Contenido', ['Reels', 'Fichas de estudio', 'Guías']], ['Temas', ['Hipertrofia', 'Nutrición', 'Sueño', 'Suplementación']], ['Canal', ['Cómo verificamos', 'Contacto', 'Colaboraciones']]];
   return /*#__PURE__*/React.createElement("footer", {
-    className: "ecc-grain",
     style: {
       background: 'var(--ground-void)',
       color: 'var(--text-on-dark-muted)'
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "ecc-cols ecc-pad",
     style: {
       maxWidth: 'var(--container-max)',
       margin: '0 auto',
-      padding: 'var(--space-16) var(--space-8) var(--space-10)',
-      display: 'grid',
-      gridTemplateColumns: '1.4fr repeat(3,1fr)',
-      gap: 'var(--space-12)'
+      paddingTop: 'var(--gap-section)',
+      paddingBottom: 'var(--space-10)'
     }
   }, /*#__PURE__*/React.createElement("div", null, Logo ? /*#__PURE__*/React.createElement(Logo, {
     variant: "horizontal",
@@ -2303,10 +2357,11 @@ function SiteFooter({
       fontSize: 'var(--text-body-sm)'
     }
   }, l))))))), /*#__PURE__*/React.createElement("div", {
+    className: "ecc-pad",
     style: {
       maxWidth: 'var(--container-max)',
       margin: '0 auto',
-      padding: '0 var(--space-8) var(--space-10)'
+      paddingBottom: 'var(--space-10)'
     }
   }, Divider ? /*#__PURE__*/React.createElement(Divider, {
     onDark: true
@@ -2328,6 +2383,10 @@ Object.assign(__ds_scope, { SiteFooter });
 
 // ui_kits/web/SiteHeader.jsx
 try { (() => {
+/* Isla flotante: la navegacion no se pega al borde superior de la ventana.
+   Es una pildora de vidrio despegada, centrada y del ancho de su contenido.
+   El blur vive aqui y en el overlay, que son fixed/sticky: nunca sobre
+   contenido que scrollea. */
 function SiteHeader({
   page = 'inicio',
   onNavigate,
@@ -2338,70 +2397,165 @@ function SiteHeader({
     Logo,
     Button
   } = B;
+  const [open, setOpen] = React.useState(false);
   const items = [['inicio', 'Videos'], ['ficha', 'Fichas de estudio'], ['guías', 'Guías']];
-  return /*#__PURE__*/React.createElement("header", {
+  const go = id => {
+    setOpen(false);
+    onNavigate && onNavigate(id);
+  };
+
+  /* El menu abierto bloquea el scroll del documento detras y se cierra con
+     Escape, que es la salida que espera cualquiera que abra algo a pantalla
+     completa. */
+  React.useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = open ? 'hidden' : prev || '';
+    const onKey = e => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    if (open) document.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = prev || '';
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("header", {
+    className: open ? "ecc-island is-above" : "ecc-island",
     style: {
-      position: 'sticky',
-      top: 0,
-      zIndex: 10,
-      background: 'rgba(11,20,37,.88)',
-      backdropFilter: 'blur(14px) saturate(140%)',
-      borderBottom: '1px solid var(--border-on-dark)'
+      padding: '0 var(--space-2) 0 var(--space-5)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 'var(--container-max)',
-      margin: '0 auto',
-      padding: '0 var(--space-8)',
-      height: 76,
+      height: 60,
       display: 'flex',
       alignItems: 'center',
-      gap: 'var(--space-10)'
+      gap: 'var(--space-8)'
     }
   }, Logo ? /*#__PURE__*/React.createElement(Logo, {
     variant: "horizontal",
     theme: "dark",
-    size: 38,
+    size: 32,
     src: asset,
     style: {
       cursor: 'pointer'
     },
-    onClick: () => onNavigate && onNavigate('inicio')
+    onClick: () => go('inicio')
   }) : null, /*#__PURE__*/React.createElement("nav", {
-    style: {
-      display: 'flex',
-      gap: 'var(--space-8)',
-      marginLeft: 'auto'
-    }
+    className: "ecc-island-nav"
   }, items.map(([id, label]) => /*#__PURE__*/React.createElement("a", {
     key: id,
     href: "#",
     onClick: e => {
       e.preventDefault();
-      onNavigate && onNavigate(id);
+      go(id);
     },
     style: {
       textDecoration: 'none',
       fontFamily: 'var(--font-heading)',
-      fontSize: 'var(--text-body-md)',
+      fontSize: 'var(--text-body-sm)',
       fontWeight: 'var(--weight-medium)',
       letterSpacing: 'var(--tracking-tight)',
       color: page === id ? 'var(--white)' : 'var(--text-on-dark-muted)',
-      borderBottom: '2px solid ' + (page === id ? 'var(--cyan-400)' : 'transparent'),
-      paddingBottom: 4
+      position: 'relative',
+      paddingBottom: 2,
+      transition: 'color var(--dur-fast) var(--ease-fluid)'
     }
-  }, label))), Button ? /*#__PURE__*/React.createElement(Button, {
+  }, label, /*#__PURE__*/React.createElement("span", {
+    style: {
+      position: 'absolute',
+      left: '50%',
+      bottom: -6,
+      width: 4,
+      height: 4,
+      borderRadius: '50%',
+      background: 'var(--cyan-400)',
+      transform: 'translateX(-50%) scale(' + (page === id ? 1 : 0) + ')',
+      transition: 'transform var(--dur-base) var(--ease-fluid)'
+    }
+  })))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 'var(--space-2)'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "ecc-island-cta"
+  }, Button ? /*#__PURE__*/React.createElement(Button, {
     variant: "evidence",
     size: "sm",
-    iconLeft: /*#__PURE__*/React.createElement("i", {
-      "data-lucide": "download",
+    iconRight: /*#__PURE__*/React.createElement("i", {
+      className: "ph-light ph-arrow-up-right",
       style: {
-        width: 16,
-        height: 16,
-        display: 'inline-flex'
+        fontSize: 15
       }
     })
-  }, "Recibir la gu\xEDa") : null));
+  }, "Recibir la gu\xEDa") : null), /*#__PURE__*/React.createElement("button", {
+    "aria-label": open ? 'Cerrar menú' : 'Abrir menú',
+    "aria-expanded": open,
+    onClick: () => setOpen(o => !o),
+    className: "ecc-island-burger",
+    style: {
+      appearance: 'none',
+      border: 0,
+      background: 'transparent',
+      color: 'var(--white)',
+      width: 44,
+      height: 44,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 'var(--radius-pill)',
+      cursor: 'pointer'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: open ? 'ecc-burger is-open' : 'ecc-burger',
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement("span", null), /*#__PURE__*/React.createElement("span", null), /*#__PURE__*/React.createElement("span", null)))))), /*#__PURE__*/React.createElement("div", {
+    className: open ? 'ecc-overlay is-open' : 'ecc-overlay',
+    "aria-hidden": !open,
+    onClick: e => {
+      if (e.target === e.currentTarget) setOpen(false);
+    },
+    style: {
+      opacity: open ? 1 : 0,
+      pointerEvents: open ? 'auto' : 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("nav", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--space-4)',
+      textAlign: 'center'
+    }
+  }, items.map(([id, label], i) => /*#__PURE__*/React.createElement("a", {
+    key: id,
+    href: "#",
+    className: "ecc-mask-item",
+    onClick: e => {
+      e.preventDefault();
+      go(id);
+    },
+    style: {
+      textDecoration: 'none',
+      color: page === id ? 'var(--gold-400)' : 'var(--white)',
+      fontFamily: 'var(--font-display)',
+      fontVariationSettings: 'var(--vf-display)',
+      fontWeight: 'var(--weight-bold)',
+      fontSize: 'clamp(38px,7vw,68px)',
+      lineHeight: 1.06,
+      letterSpacing: 'var(--tracking-display)',
+      transitionDelay: open ? 60 + i * 70 + 'ms' : '0ms'
+    }
+  }, label)), /*#__PURE__*/React.createElement("span", {
+    className: "ecc-mask-item ecc-label",
+    style: {
+      marginTop: 'var(--space-8)',
+      color: 'var(--text-on-dark-faint)',
+      transitionDelay: open ? 60 + items.length * 70 + 'ms' : '0ms'
+    }
+  }, "Cada afirmaci\xF3n con su PMID"))));
 }
 Object.assign(__ds_scope, { SiteHeader });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/web/SiteHeader.jsx", error: String((e && e.message) || e) }); }
@@ -2425,10 +2579,12 @@ function StudyArticle({
     Card
   } = B;
   return /*#__PURE__*/React.createElement("article", {
+    className: "ecc-pad",
     style: {
       maxWidth: 900,
       margin: '0 auto',
-      padding: 'var(--space-16) var(--space-8) var(--space-24)'
+      paddingTop: 'var(--gap-section-xl)',
+      paddingBottom: 'var(--gap-section)'
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -2441,16 +2597,15 @@ function StudyArticle({
     size: "sm",
     onClick: onBack,
     iconLeft: /*#__PURE__*/React.createElement("i", {
-      "data-lucide": "arrow-left",
+      className: "ph-light ph-arrow-left",
       style: {
-        width: 16,
-        height: 16,
-        display: 'inline-flex'
+        fontSize: 16
       }
     })
   }, "Videos") : null, Badge ? /*#__PURE__*/React.createElement(Badge, {
     tone: "info"
   }, "Ficha de estudio") : null, Tag ? /*#__PURE__*/React.createElement(Tag, null, "Sue\xF1o") : null), /*#__PURE__*/React.createElement("h1", {
+    className: "ecc-reveal",
     style: {
       marginTop: 'var(--space-6)',
       fontSize: 58,
@@ -2458,6 +2613,7 @@ function StudyArticle({
       letterSpacing: 'var(--tracking-display)'
     }
   }, "Dormir 5.5 h cambia de d\xF3nde sale el peso que pierdes"), /*#__PURE__*/React.createElement("p", {
+    className: "ecc-reveal ecc-reveal-1",
     style: {
       marginTop: 'var(--space-5)',
       maxWidth: 'var(--measure-prose)',
@@ -2484,7 +2640,7 @@ function StudyArticle({
     }
   }, "Publicado 12 ago 2026 \xB7 4 min")), /*#__PURE__*/React.createElement("div", {
     style: {
-      margin: 'var(--space-12) 0'
+      margin: 'var(--gap-section) 0 var(--space-8)'
     }
   }, Divider ? /*#__PURE__*/React.createElement(Divider, {
     label: "La creencia"
@@ -2493,7 +2649,7 @@ function StudyArticle({
     fact: "Con el mismo d\xE9ficit, dormir 5.5 h cambio la proporci\xF3n de grasa y m\xFAsculo perdidos"
   }) : null, /*#__PURE__*/React.createElement("div", {
     style: {
-      margin: 'var(--space-12) 0 var(--space-6)'
+      margin: 'var(--gap-section) 0 var(--space-8)'
     }
   }, Divider ? /*#__PURE__*/React.createElement(Divider, {
     label: "Metodolog\xEDa"
@@ -2521,7 +2677,7 @@ function StudyArticle({
     }
   }, "Los participantes pasaron por las dos condiciones con el mismo d\xE9ficit cal\xF3rico y la misma dieta. La \xFAnica diferencia fue el tiempo en cama: 8.5 h frente a 5.5 h."), /*#__PURE__*/React.createElement("div", {
     style: {
-      margin: 'var(--space-12) 0 var(--space-6)'
+      margin: 'var(--gap-section) 0 var(--space-8)'
     }
   }, Divider ? /*#__PURE__*/React.createElement(Divider, {
     label: "Resultado"
@@ -2554,7 +2710,7 @@ function StudyArticle({
     }
   }, "El peso en la balanza fue pr\xE1cticamente el mismo en ambas condiciones. Lo que cambi\xF3 fue de d\xF3nde sali\xF3 ese peso."), /*#__PURE__*/React.createElement("div", {
     style: {
-      marginTop: 'var(--space-12)',
+      marginTop: 'var(--gap-section)',
       display: 'grid',
       gridTemplateColumns: '1fr 1fr',
       gap: 'var(--space-4)'
@@ -2571,7 +2727,7 @@ function StudyArticle({
     kind: "pinned"
   }, "En el video contamos solo este estudio. Si te interesa el efecto sobre el hambre, va en la ficha de grelina.") : null), /*#__PURE__*/React.createElement("div", {
     style: {
-      marginTop: 'var(--space-12)'
+      marginTop: 'var(--gap-section)'
     }
   }, Divider ? /*#__PURE__*/React.createElement(Divider, {
     label: "Referencias"
@@ -2593,42 +2749,50 @@ Object.assign(__ds_scope, { StudyArticle });
 
 // ui_kits/web/VideoGrid.jsx
 try { (() => {
+/* `span` es el tamano de la pieza en el bento, no una propiedad del video:
+   la parrilla es asimetrica a proposito y el primer elemento manda. */
 const VIDEOS = [{
   cover: ['Dormir poco', 'te frena'],
   tema: 'Sueño',
   stat: '60%',
   pmid: '20921542',
-  dur: '1:18'
+  dur: '1:18',
+  span: 'feature'
 }, {
   cover: ['Más proteína', 'no es más músculo'],
   tema: 'Nutrición',
   stat: '1.6 g/kg',
   pmid: '22150425',
-  dur: '1:24'
+  dur: '1:24',
+  span: 'wide'
 }, {
   cover: ['Cafeína antes', 'de entrenar'],
   tema: 'Suplementación',
   stat: '+7%',
   pmid: '33388079',
-  dur: '1:06'
+  dur: '1:06',
+  span: 'wide'
 }, {
   cover: ['Entrenar al fallo', 'no es obligatorio'],
   tema: 'Hipertrofia',
   stat: '0 dif.',
   pmid: '34674314',
-  dur: '1:32'
+  dur: '1:32',
+  span: 'third'
 }, {
   cover: ['El cardio no', 'borra el músculo'],
   tema: 'Hipertrofia',
   stat: '-0.2 kg',
   pmid: '34503527',
-  dur: '1:11'
+  dur: '1:11',
+  span: 'third'
 }, {
   cover: ['Comer de noche', 'no engorda'],
   tema: 'Nutrición',
   stat: 'igual',
   pmid: '32662455',
-  dur: '1:20'
+  dur: '1:20',
+  span: 'third'
 }];
 function VideoGrid({
   filter = 'Todos',
@@ -2643,29 +2807,33 @@ function VideoGrid({
   const temas = ['Todos', 'Sueño', 'Nutrición', 'Hipertrofia', 'Suplementación'];
   const list = filter === 'Todos' ? VIDEOS : VIDEOS.filter(v => v.tema === filter);
   return /*#__PURE__*/React.createElement("section", {
+    className: "ecc-pad",
     style: {
       maxWidth: 'var(--container-max)',
       margin: '0 auto',
-      padding: 'var(--space-20) var(--space-8)'
+      paddingTop: 'var(--gap-section)',
+      paddingBottom: 'var(--gap-section)'
     }
   }, /*#__PURE__*/React.createElement("div", {
+    className: "ecc-reveal",
     style: {
       display: 'flex',
       alignItems: 'flex-end',
       justifyContent: 'space-between',
       gap: 'var(--space-8)',
-      flexWrap: 'wrap'
+      flexWrap: 'wrap',
+      marginBottom: 'var(--space-12)'
     }
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
-    className: "ecc-label",
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
-      color: 'var(--text-faint)'
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 'var(--space-4)',
+      alignItems: 'flex-start'
     }
-  }, "El archivo"), /*#__PURE__*/React.createElement("h2", {
-    style: {
-      marginTop: 'var(--space-2)'
-    }
-  }, "\xDAltimos videos")), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "ecc-eyebrow"
+  }, "El archivo"), /*#__PURE__*/React.createElement("h2", null, "\xDAltimos videos")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'flex',
       gap: 'var(--space-2)',
@@ -2676,94 +2844,92 @@ function VideoGrid({
     active: filter === t,
     onClick: () => onFilter && onFilter(t)
   }, t) : null))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 'var(--space-8)',
-      display: 'grid',
-      gridTemplateColumns: 'repeat(3,minmax(0,1fr))',
-      gap: 'var(--space-6)'
-    }
-  }, list.map(v => /*#__PURE__*/React.createElement(Card, {
-    key: v.pmid,
-    interactive: true,
-    padding: "none",
-    style: {
-      overflow: 'hidden'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "ecc-atmos",
-    style: {
-      position: 'relative',
-      aspectRatio: '4 / 5',
-      padding: 'var(--space-6)',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'flex-end'
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'absolute',
-      inset: 0,
-      background: 'var(--scrim-bottom)'
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      position: 'absolute',
-      top: 'var(--space-4)',
-      left: 'var(--space-4)',
-      right: 'var(--space-4)',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center'
-    }
-  }, Badge ? /*#__PURE__*/React.createElement(Badge, {
-    tone: "outlineOnDark"
-  }, v.tema) : null, /*#__PURE__*/React.createElement("span", {
-    className: "ecc-num",
-    style: {
-      fontFamily: 'var(--font-mono)',
-      fontSize: 'var(--text-caption)',
-      color: 'var(--text-on-dark-muted)'
-    }
-  }, v.dur)), /*#__PURE__*/React.createElement("span", {
-    className: "ecc-cover",
-    style: {
-      position: 'relative',
-      fontSize: 37,
-      color: 'var(--white)'
-    }
-  }, v.cover[0], /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: 'var(--gold-400)'
-    }
-  }, v.cover[1]))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      padding: 'var(--space-5)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      gap: 'var(--space-4)'
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "ecc-num",
-    style: {
-      fontFamily: 'var(--font-display)',
-      fontVariationSettings: 'var(--vf-display)',
-      fontWeight: 'var(--weight-bold)',
-      fontSize: 29,
-      letterSpacing: 'var(--tracking-display)',
-      background: 'var(--evidence-fill)',
-      color: 'var(--evidence-fill-ink)',
-      padding: '2px 9px',
-      borderRadius: 'var(--radius-xs)'
-    }
-  }, v.stat), /*#__PURE__*/React.createElement("span", {
-    className: "ecc-num",
-    style: {
-      fontFamily: 'var(--font-mono)',
-      fontSize: 'var(--text-caption)',
-      color: 'var(--cyan-600)'
-    }
-  }, "PMID ", v.pmid))))));
+    className: "ecc-bento"
+  }, list.map((v, i) => {
+    const feature = v.span === 'feature';
+    return /*#__PURE__*/React.createElement(Card, {
+      key: v.pmid,
+      interactive: true,
+      padding: "none",
+      className: 'ecc-bento-' + v.span + ' ecc-reveal ecc-reveal-' + Math.min(5, i + 1)
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "ecc-atmos",
+      style: {
+        position: 'relative',
+        flex: '1 1 auto',
+        aspectRatio: feature ? undefined : v.span === 'wide' ? '16 / 10' : '4 / 5',
+        minHeight: feature ? 300 : undefined,
+        padding: feature ? 'var(--space-8)' : 'var(--space-6)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'absolute',
+        inset: 0,
+        background: 'var(--scrim-bottom)'
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'absolute',
+        top: 'var(--space-5)',
+        left: 'var(--space-5)',
+        right: 'var(--space-5)',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }
+    }, Badge ? /*#__PURE__*/React.createElement(Badge, {
+      tone: "outlineOnDark"
+    }, v.tema) : null, /*#__PURE__*/React.createElement("span", {
+      className: "ecc-num",
+      style: {
+        fontFamily: 'var(--font-mono)',
+        fontSize: 'var(--text-caption)',
+        color: 'var(--text-on-dark-muted)'
+      }
+    }, v.dur)), /*#__PURE__*/React.createElement("span", {
+      className: "ecc-cover",
+      style: {
+        position: 'relative',
+        fontSize: feature ? 58 : 37,
+        color: 'var(--white)'
+      }
+    }, v.cover[0], /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+      style: {
+        color: 'var(--gold-400)'
+      }
+    }, v.cover[1]))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: 'var(--space-5) var(--space-6)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 'var(--space-4)'
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "ecc-num",
+      style: {
+        fontFamily: 'var(--font-display)',
+        fontVariationSettings: 'var(--vf-display)',
+        fontWeight: 'var(--weight-bold)',
+        fontSize: feature ? 36 : 29,
+        letterSpacing: 'var(--tracking-display)',
+        background: 'var(--evidence-fill)',
+        color: 'var(--evidence-fill-ink)',
+        padding: '2px 10px',
+        borderRadius: 'var(--radius-xs)'
+      }
+    }, v.stat), /*#__PURE__*/React.createElement("span", {
+      className: "ecc-num",
+      style: {
+        fontFamily: 'var(--font-mono)',
+        fontSize: 'var(--text-caption)',
+        color: 'var(--cyan-600)'
+      }
+    }, "PMID ", v.pmid)));
+  })));
 }
 Object.assign(__ds_scope, { VideoGrid });
 })(); } catch (e) { __ds_ns.__errors.push({ path: "ui_kits/web/VideoGrid.jsx", error: String((e && e.message) || e) }); }

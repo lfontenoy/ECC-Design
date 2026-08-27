@@ -10,7 +10,7 @@ export function ReelOverlay({kind='hook',asset='../../assets/isotipo-ecc.png'}){
     borderRadius:'var(--radius-xl)'};
 
   return (
-    <div className="ecc-grain" style={{position:'relative',width:1080,height:1920,overflow:'hidden',
+    <div className="ecc-grain-canvas" style={{position:'relative',width:1080,height:1920,overflow:'hidden',
       background:'linear-gradient(158deg,var(--navy-600) 0%,var(--navy-900) 58%,var(--navy-975) 100%)'}}>
       <div className="ecc-grid" style={{position:'absolute',inset:0,opacity:.6}}/>
       <div style={{position:'absolute',inset:0,background:'var(--glow-cyan)'}}/>
