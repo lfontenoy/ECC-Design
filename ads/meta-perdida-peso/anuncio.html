@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ECC · Anuncio estático</title>
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body{margin:0;background:var(--navy-975)}
+  .ad{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--navy-950)}
+
+  /* Foto: ocupa la parte alta y se funde con el panel navy de abajo. */
+  .photo{position:absolute;inset:0 0 auto 0;height:860px;overflow:hidden}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block}
+  .photo::before{content:"";position:absolute;inset:0 0 auto 0;height:260px;background:var(--scrim-top);z-index:1}
+  .photo::after{content:"";position:absolute;inset:auto 0 0 0;height:300px;
+    background:linear-gradient(to top,var(--navy-950) 0%,rgba(11,20,37,.7) 40%,rgba(11,20,37,0) 100%);z-index:1}
+
+  /* Marcador de foto pendiente: deja visible qué foto va en cada anuncio. */
+  .placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:150px 96px 220px}
+  .placeholder-box{border:2px dashed rgba(154,241,254,.35);border-radius:var(--radius-xl);padding:40px 44px;
+    background:rgba(255,255,255,.03);max-width:820px}
+  .placeholder-box .ecc-label{font-size:20px;color:var(--cyan-300)}
+  .placeholder-box p{margin-top:18px;font:500 30px/1.35 var(--font-body);color:var(--text-on-dark-muted)}
+
+  .top{position:absolute;top:64px;left:76px;right:76px;display:flex;align-items:center;gap:22px;z-index:3}
+  .lockup{display:flex;flex-direction:column;line-height:1}
+  .lockup b{font-family:var(--font-display);font-variation-settings:var(--vf-display);font-weight:800;font-size:34px;
+    letter-spacing:-0.005em;text-transform:uppercase;color:var(--white)}
+  .lockup span{font-family:var(--font-mono);font-weight:500;font-size:17px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--cyan-300);margin-top:7px}
+
+  /* Burbuja de pensamiento: caja opaca, nunca texto suelto sobre la foto. */
+  .bubble{position:absolute;z-index:2;background:var(--white);border-radius:40px;padding:30px 34px;
+    box-shadow:0 18px 50px -12px rgba(6,12,24,.55)}
+  .bubble .dot{position:absolute;background:var(--white);border-radius:50%;box-shadow:0 8px 20px -6px rgba(6,12,24,.5)}
+  .bubble .think{font:700 46px/1.05 var(--font-display);font-variation-settings:var(--vf-display);color:var(--navy-950)}
+
+  .cal{width:330px}
+  .cal-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+  .cal-head b{font:700 30px/1 var(--font-display);font-variation-settings:var(--vf-display);text-transform:uppercase;color:var(--navy-950)}
+  .cal-head span{font:500 15px/1 var(--font-mono);letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted)}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+  .cal-grid i{font:600 14px/1 var(--font-mono);font-style:normal;color:var(--text-faint);padding-bottom:4px}
+  .cal-grid em{font:600 20px/40px var(--font-body);font-style:normal;color:var(--navy-900);border-radius:50%;position:relative}
+  .cal-grid em.past{color:#A9BEDD}
+  .cal-grid em.mark{color:var(--white);background:var(--coral-400)}
+
+  /* Panel de texto */
+  .panel{position:absolute;left:0;right:0;bottom:0;top:800px;z-index:2;padding:0 76px 72px;
+    display:flex;flex-direction:column;justify-content:flex-end;gap:26px}
+  .headline{margin:0;font-family:var(--font-display);font-variation-settings:var(--vf-cover);font-weight:700;
+    line-height:.92;letter-spacing:var(--tracking-cover);text-transform:uppercase;color:var(--white)}
+  .sub{font:500 34px/1.25 var(--font-body);color:var(--text-on-dark-muted);max-width:30ch}
+  .row{display:flex;align-items:center;gap:24px;margin-top:12px}
+  .cta{display:inline-flex;align-items:center;gap:14px;background:var(--gold-400);color:var(--navy-975);
+    font:700 32px/1 var(--font-body);padding:24px 36px;border-radius:var(--radius-pill)}
+  .row .line{flex:1;height:1px;background:var(--border-on-dark)}
+  .row .ecc-label{font-size:17px;color:var(--text-on-dark-faint)}
+
+  /* Variante tipográfica (sin foto): la frase del paciente como protagonista. */
+  .ad.quote .panel{top:0;justify-content:flex-start;padding:200px 88px 72px}
+  .ad.quote .body{margin:auto 0;display:flex;flex-direction:column;gap:30px}
+  .ad.quote .quote-mark{font:800 220px/0.6 var(--font-display);color:var(--cyan-400);height:110px}
+  .ad.quote .headline{font-size:128px;line-height:.9}
+  .ad.quote .sub{color:var(--white);font-size:42px}
+  
+</style>
+</head>
+<body>
+<div id="ad" class="ad"></div>
+<script>
+const SUB_12 = 'Transforma tu cuerpo en 12 semanas con neurociencia';
+const SUB_PIERDE = 'Pierde peso con nuestro programa basado en neurociencia';
+const SUB_NEURO = 'Transforma tu cuerpo con neurociencia';
+
+/* Cada anuncio: copy final aprobado + la foto que le corresponde. */
+const ADS = {
+  '01a-espejo-segura':    {h:'Que la próxima vez que te mires al espejo te sientas orgulloso de tu progreso', s:SUB_12, foto:'espejo-segura', desc:'Hombre 30+ en el vestidor del gym, después de entrenar, sonriendo con orgullo frente al espejo.'},
+  '01b-espejo-sutil':     {h:'Que la próxima vez que te mires al espejo te sientas orgulloso de tu progreso', s:SUB_12, foto:'espejo-sutil', desc:'Hombre frente al espejo de casa; su reflejo se ve sutilmente más erguido y seguro, sonriendo.'},
+  '02-polo':              {h:'Este verano, quítate el polo con orgullo', s:SUB_12, foto:'polo', desc:'Playa en Perú: hombre se quita el polo con seguridad y sus amigos lo celebran sorprendidos.'},
+  '03a-bikini-segura':    {h:'Este verano, siéntete confiada en bikini', s:SUB_12, foto:'bikini-segura', desc:'Tres amigas con distintos cuerpos riendo en bikini camino al mar.'},
+  '03b-bikini-sutil':     {h:'Este verano, siéntete confiada en bikini', s:SUB_12, foto:'bikini-sutil', desc:'Mujer fit se quita el polo holgado y queda en bikini; al fondo, desenfocadas, otras personas con polos holgados.'},
+  '04-nueva-version':     {h:'Siéntete orgulloso de tu nueva versión', s:SUB_12, foto:'espejo-segura', desc:'Reutiliza la foto del espejo (versión segura).'},
+  '05a-jean-segura':      {h:'Tu jean favorito te está esperando', s:SUB_PIERDE, foto:'jean-segura', desc:'Mujer sonriente sacando su jean favorito del clóset.'},
+  '05b-jean-sutil':       {h:'Tu jean favorito te está esperando', s:SUB_PIERDE, foto:'jean-sutil', desc:'Mujer con dos jeans en las manos, mirando pensativa el más ajustado.'},
+  '06-ropa-favorita':     {h:'Que tu ropa favorita vuelva a ser tu primera opción', s:SUB_PIERDE, foto:'jean-segura', desc:'Reutiliza la foto del jean (versión segura).'},
+  '07-ropa-luzca':        {h:'Ponte ropa que te luzca, no que te cubra', s:SUB_PIERDE, foto:'jean-segura', desc:'Reutiliza la foto del jean (versión segura).'},
+  '08-lunes':             {h:'Deja de empezar la dieta cada lunes', s:SUB_NEURO, foto:'pizza', desc:'Hombre en la mesa con una pizza, mirando hacia arriba a la derecha, pensando.', bubble:'calendar', bx:560, by:150},
+  '09-fin-de-semana':     {h:'Disfruta el fin de semana sin romper tu dieta', s:'Crea hábitos saludables. Transforma tu cuerpo con neurociencia', foto:'fin-de-semana', desc:'Amigos en un almuerzo de fin de semana en una terraza, comida a la parrilla y ensaladas.'},
+  '10-hamburguesa':       {h:'Que una hamburguesa no retrase tu dieta hasta el lunes', s:SUB_PIERDE, foto:'delivery', desc:'Reutiliza la foto del delivery nocturno con hamburguesa.', bubble:'calendar', bx:560, by:150},
+  '11-delivery':          {h:'Pedir delivery después de trabajar no te impide perder peso', s:SUB_12, foto:'delivery', desc:'Noche: mujer en ropa de oficina recibe una bolsa de delivery con hamburguesa, pensativa.', bubble:'text', text:'¿Y mi dieta?', bx:600, by:170},
+  '12-entreno':           {quote:true, h:'Entreno y como sano, pero no pierdo peso', s:'Te explico por qué', s2:SUB_12},
+};
+
+const id = new URLSearchParams(location.search).get('id') || '01a-espejo-segura';
+const a = ADS[id];
+const el = document.getElementById('ad');
+
+const topBar = `<div class="top"><img src="../../assets/isotipo-ecc.png" width="76" height="76" alt="">
+  <div class="lockup"><b>Entrena</b><span>con Ciencia</span></div></div>`;
+const row = `<div class="row"><span class="cta">Conoce el programa <span aria-hidden="true">→</span></span>
+  <span class="line"></span><span class="ecc-label">+18 · Basado en evidencia</span></div>`;
+
+function calendar(){
+  /* Semana actual tachada en gris, el lunes siguiente marcado: el "lunes empiezo". */
+  const days = ['L','M','M','J','V','S','D'].map(d=>`<i>${d}</i>`).join('');
+  let nums = '';
+  for(let n=13;n<=26;n++){
+    const cls = n<=19 ? 'past' : (n===20 ? 'mark' : '');
+    nums += `<em class="${cls}">${n}</em>`;
+  }
+  return `<div class="cal"><div class="cal-head"><b>Lunes</b><span>Empiezo</span></div>
+    <div class="cal-grid">${days}${nums}</div></div>`;
+}
+
+function bubble(){
+  if(!a.bubble) return '';
+  const inner = a.bubble==='calendar' ? calendar() : `<div class="think">${a.text}</div>`;
+  return `<div class="bubble" style="left:${a.bx}px;top:${a.by}px">${inner}
+    <span class="dot" style="width:34px;height:34px;left:40px;bottom:-46px"></span>
+    <span class="dot" style="width:20px;height:20px;left:10px;bottom:-80px"></span></div>`;
+}
+
+if(a.quote){
+  el.classList.add('ecc-atmos','quote');
+  el.innerHTML = `${topBar}<div class="panel"><div class="body"><div class="quote-mark">“</div>
+    <h1 class="headline">${a.h}</h1><span class="ecc-rule" style="width:96px;height:5px"></span>
+    <p class="sub">${a.s}</p><p class="sub" style="font-size:32px;color:var(--text-on-dark-muted)">${a.s2}</p></div>${row}</div>`;
+} else {
+  const photo = `<img src="fotos/${a.foto}.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'placeholder',innerHTML:'<div class=&quot;placeholder-box&quot;><span class=&quot;ecc-label&quot;>Foto pendiente · fotos/${a.foto}.png</span><p>${a.desc.replace(/'/g,'&#39;')}</p></div>'}))">`;
+  el.classList.add('ecc-atmos');
+  el.innerHTML = `<div class="photo">${photo}</div>${bubble()}${topBar}
+    <div class="panel">
+      <span class="ecc-rule" style="width:96px;height:5px"></span>
+      <h1 class="headline" id="h">${a.h}</h1><p class="sub">${a.s}</p>${row}</div>`;
+}
+
+/* El titular se ajusta al espacio: frases cortas grandes, largas más chicas. */
+document.fonts.ready.then(()=>{
+  const h = document.getElementById('h');
+  if(h){ let size=120; h.style.fontSize=size+'px';
+    while(h.scrollHeight>250 && size>56){ size-=2; h.style.fontSize=size+'px'; } }
+  document.body.dataset.ready='1';
+});
+</script>
+</body>
+</html>
