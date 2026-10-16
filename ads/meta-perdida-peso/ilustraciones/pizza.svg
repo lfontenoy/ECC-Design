@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 860" width="1080" height="860">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#172C50"/><stop offset="1" stop-color="#0B1425"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.37" cy="0.42" r="0.45">
+      <stop offset="0" stop-color="#3EA9D6" stop-opacity=".28"/><stop offset="1" stop-color="#3EA9D6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="860" fill="url(#bg)"/>
+  <rect width="1080" height="860" fill="url(#glow)"/>
+  <!-- ventana de noche al fondo -->
+  <g opacity=".55">
+    <rect x="80" y="210" width="190" height="250" rx="10" fill="#0B1425" stroke="#2C5391" stroke-width="8"/>
+    <line x1="175" y1="210" x2="175" y2="460" stroke="#2C5391" stroke-width="6"/>
+    <line x1="80" y1="335" x2="270" y2="335" stroke="#2C5391" stroke-width="6"/>
+    <circle cx="225" cy="262" r="22" fill="#C7F6FF" opacity=".8"/>
+  </g>
+  <g transform="translate(0,-90)">
+    <!-- torso -->
+    <path d="M245 900 L245 650 Q245 560 330 545 L470 545 Q555 560 555 650 L555 900 Z" fill="#1F7CA8"/>
+    <path d="M360 545 Q400 585 440 545 Z" fill="#155C7F"/>
+    <!-- cuello y cabeza -->
+    <rect x="374" y="495" width="52" height="60" rx="14" fill="#B97E55"/>
+    <ellipse cx="320" cy="445" rx="16" ry="23" fill="#C98B62"/>
+    <ellipse cx="480" cy="445" rx="16" ry="23" fill="#C98B62"/>
+    <ellipse cx="400" cy="440" rx="80" ry="92" fill="#D49A6A"/>
+    <path d="M316 432 Q308 335 400 330 Q494 333 486 432 Q474 380 400 376 Q332 380 316 432 Z" fill="#1B1410"/>
+    <!-- cejas: una levantada, gesto de duda -->
+    <path d="M350 412 Q366 404 384 410" stroke="#1B1410" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M416 402 Q434 390 452 398" stroke="#1B1410" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <!-- ojos mirando arriba a la derecha, hacia la burbuja -->
+    <ellipse cx="368" cy="438" rx="14" ry="11" fill="#fff"/>
+    <ellipse cx="432" cy="436" rx="14" ry="11" fill="#fff"/>
+    <circle cx="375" cy="433" r="6.5" fill="#1B1410"/>
+    <circle cx="439" cy="431" r="6.5" fill="#1B1410"/>
+    <path d="M400 448 Q391 474 405 478" stroke="#A86B45" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <path d="M384 502 Q398 497 414 501" stroke="#8A4B32" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <!-- brazo izquierdo apoyado en la mesa -->
+    <path d="M250 650 Q225 700 250 735 L390 735 Q405 718 390 702 L300 700 Z" fill="#1F7CA8"/>
+    <rect x="300" y="700" width="120" height="38" rx="19" fill="#D49A6A"/>
+    <!-- brazo derecho sosteniendo la pizza, en pausa -->
+    <path d="M520 600 Q585 650 595 720" stroke="#1F7CA8" stroke-width="64" fill="none" stroke-linecap="round"/>
+    <line x1="592" y1="715" x2="532" y2="585" stroke="#D49A6A" stroke-width="46" stroke-linecap="round"/>
+    <polygon points="494,585 570,556 512,468" fill="#F4C46B"/>
+    <line x1="494" y1="585" x2="570" y2="556" stroke="#C7853F" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="520" cy="532" r="9" fill="#DE3B26"/>
+    <circle cx="536" cy="508" r="7" fill="#DE3B26"/>
+    <circle cx="545" cy="548" r="8" fill="#DE3B26"/>
+    <circle cx="530" cy="580" r="30" fill="#D49A6A"/>
+    <!-- mesa -->
+    <rect x="0" y="735" width="1080" height="260" fill="#224277"/>
+    <rect x="0" y="735" width="1080" height="14" fill="#3A67AE"/>
+    <!-- plato con el resto de la pizza -->
+    <ellipse cx="760" cy="770" rx="170" ry="38" fill="#D3DEEE"/>
+    <ellipse cx="760" cy="764" rx="150" ry="30" fill="#F2F6FC"/>
+    <path d="M640 762 A120 24 0 1 0 880 762 L760 762 Z" fill="#F4C46B" stroke="#C7853F" stroke-width="10" stroke-linejoin="round"/>
+    <ellipse cx="700" cy="770" rx="13" ry="5" fill="#DE3B26"/>
+    <ellipse cx="780" cy="778" rx="13" ry="5" fill="#DE3B26"/>
+    <ellipse cx="830" cy="768" rx="11" ry="4" fill="#DE3B26"/>
+    <!-- vaso -->
+    <rect x="940" y="650" width="62" height="100" rx="8" fill="#9AF1FE" opacity=".35"/>
+    <rect x="940" y="690" width="62" height="60" rx="8" fill="#6DCDF2" opacity=".45"/>
+  </g>
+</svg>

@@ -9,11 +9,10 @@
   .ad{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--navy-950)}
 
   /* Foto: ocupa la parte alta y se funde con el panel navy de abajo. */
-  .photo{position:absolute;inset:0 0 auto 0;height:860px;overflow:hidden}
+  .photo{position:absolute;inset:0 0 auto 0;height:860px;overflow:hidden;
+    -webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 100%);mask-image:linear-gradient(to bottom,#000 62%,transparent 100%)}
   .photo img{width:100%;height:100%;object-fit:cover;display:block}
   .photo::before{content:"";position:absolute;inset:0 0 auto 0;height:260px;background:var(--scrim-top);z-index:1}
-  .photo::after{content:"";position:absolute;inset:auto 0 0 0;height:300px;
-    background:linear-gradient(to top,var(--navy-950) 0%,rgba(11,20,37,.7) 40%,rgba(11,20,37,0) 100%);z-index:1}
 
   /* Marcador de foto pendiente: deja visible qué foto va en cada anuncio. */
   .placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:150px 96px 220px}
@@ -113,6 +112,13 @@ function calendar(){
     <div class="cal-grid">${days}${nums}</div></div>`;
 }
 
+function tryNext(img){
+  if(!img.dataset.step){ img.dataset.step='svg'; img.src=`ilustraciones/${a.foto}.svg`; return; }
+  const ph=document.createElement('div'); ph.className='placeholder';
+  ph.innerHTML=`<div class="placeholder-box"><span class="ecc-label">Foto pendiente · fotos/${a.foto}.png</span><p>${a.desc}</p></div>`;
+  img.replaceWith(ph);
+}
+
 function bubble(){
   if(!a.bubble) return '';
   const inner = a.bubble==='calendar' ? calendar() : `<div class="think">${a.text}</div>`;
@@ -127,7 +133,8 @@ if(a.quote){
     <h1 class="headline">${a.h}</h1><span class="ecc-rule" style="width:96px;height:5px"></span>
     <p class="sub">${a.s}</p><p class="sub" style="font-size:32px;color:var(--text-on-dark-muted)">${a.s2}</p></div>${row}</div>`;
 } else {
-  const photo = `<img src="fotos/${a.foto}.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'placeholder',innerHTML:'<div class=&quot;placeholder-box&quot;><span class=&quot;ecc-label&quot;>Foto pendiente · fotos/${a.foto}.png</span><p>${a.desc.replace(/'/g,'&#39;')}</p></div>'}))">`;
+  /* Busca la foto (fotos/*.png); si no existe, la ilustración (ilustraciones/*.svg); si tampoco, el marcador. */
+  const photo = `<img src="fotos/${a.foto}.png" alt="" onerror="tryNext(this)">`;
   el.classList.add('ecc-atmos');
   el.innerHTML = `<div class="photo">${photo}</div>${bubble()}${topBar}
     <div class="panel">
